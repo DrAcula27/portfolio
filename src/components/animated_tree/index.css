@@ -1,0 +1,164 @@
+/* planting seed animation */
+#seed,
+#wave {
+  margin: 175px auto;
+  grid-area: main;
+}
+
+#seed {
+  position: relative;
+  top: -500px;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  background: var(--secondary-dark-color);
+  -moz-animation-name: plant;
+  -webkit-animation-name: plant;
+  animation-name: plant;
+  -moz-animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+#wave {
+  position: relative;
+  opacity: 0;
+  top: 0;
+  width: 2px;
+  height: 1px;
+  border: var(--primary-light-color) 7px solid;
+  -moz-border-radius: 300px / 150px;
+  -webkit-border-radius: 300px / 150px;
+  border-radius: 300px / 150px;
+  -moz-animation-name: ripple;
+  -webkit-animation-name: ripple;
+  animation-name: ripple;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+#wave:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: -5px;
+  left: -5px;
+  width: 2px;
+  height: 1px;
+  border: var(--primary-light-color) 5px solid;
+  -moz-border-radius: 300px / 150px;
+  -webkit-border-radius: 300px / 150px;
+  border-radius: 300px / 150px;
+  -moz-animation-name: ripple-2;
+  -webkit-animation-name: ripple-2;
+  animation-name: ripple-2;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+  }
+  to {
+    width: 600px;
+    height: 300px;
+    border-width: 1px;
+    top: -100px;
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    width: 200px;
+    height: 100px;
+    border-width: 1px;
+    top: 100px;
+    left: 200px;
+  }
+}
+
+@keyframes plant {
+  to {
+    top: 190px;
+  }
+}
+
+/* growing tree animation */
+#container {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#tree {
+  background-color: var(--accent-color);
+  mask: url(../../tree.svg) center no-repeat;
+  -webkit-mask: url(../../tree.svg) center no-repeat;
+  height: 95vh;
+  max-height: 100%;
+  min-height: 500px;
+  width: 85vw;
+  max-width: 100%;
+  min-width: 500px;
+}
+
+/* expose the tree by moving the "background" color */
+#tree-bg {
+  background-color: var(--secondary-dark-color);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: grow;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: 5s;
+  animation-name: grow;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes grow {
+  from {
+    bottom: 0%;
+  }
+  to {
+    bottom: 100%;
+  }
+}
+
+@keyframes grow {
+  from {
+    bottom: 0%;
+  }
+  to {
+    bottom: 100%;
+  }
+}

@@ -108,7 +108,8 @@ This project uses the MERN stack.
 
 ## Attributions
 
--
+- Tree graphic is from [Clker-Free-Vector-Images on pixabay.com](https://pixabay.com/vectors/plant-silhouette-grey-tree-leaves-312737/?download).
+- Acorn graphic is from [Clker-Free-Vector-Images on pixabay.com](https://pixabay.com/vectors/acorn-nut-oak-tree-autumn-seed-42791/).
 
 ## Show Your Support
 
