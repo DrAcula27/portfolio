@@ -1,0 +1,23 @@
+nav {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary-dark-color);
+}
+
+nav ul {
+  margin-bottom: 0;
+}
+
+nav a button {
+  margin: 1rem auto;
+  border-color: var(--action-color);
+}
+
+.right-links {
+  display: flex;
+  gap: 1rem;
+}

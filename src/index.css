@@ -47,6 +47,52 @@ body {
   grid-area: main;
 }
 
+h1 {
+  font-weight: 400;
+  text-decoration: double underline var(--accent-color);
+}
+
+h2 {
+  color: var(--accent-color);
+}
+
+button {
+  color: var(--primary-light-color);
+}
+
+button:hover {
+  color: var(--action-color);
+  border-color: var(--action-color);
+}
+
+button:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+a {
+  color: var(--action-color);
+}
+
+a:hover {
+  font-weight: 600;
+  color: var(--action-color);
+}
+
+button a {
+  text-decoration: none;
+  color: var(--primary-light-color);
+}
+
+button a:hover {
+  color: var(--action-color);
+}
+
 .hidden {
   display: none;
+}
+
+.max-width {
+  max-width: 90vw;
+  margin: 0 auto;
 }

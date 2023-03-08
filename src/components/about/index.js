@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <section id="about">
+    <section id="about" className="max-width">
       <h2>About Me</h2>
       <p>Hello! My name is Danielle, and I make things for the web.</p>
       <p>

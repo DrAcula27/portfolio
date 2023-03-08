@@ -10,17 +10,19 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact">
-      <h3>Get In Touch</h3>
+    <section id="contact" className="max-width">
+      <h2>Get In Touch</h2>
       <p>
         I am actively seeking remote opportunities. If my projects and/or
         skillset speak to you, don't hesitiate to reach out!
       </p>
-      <button>
+      <button
+        style={{ borderColor: "var(--action-color)", marginBottom: "3rem" }}
+      >
         <Mailto
-          email="foo@bar.baz"
-          subject="Hello & Welcome"
-          body="Hello world!"
+          email="daniellerosekendall@gmail.com"
+          subject="Hello from your SWE profile"
+          body=""
         >
           Send a Message
         </Mailto>

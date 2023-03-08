@@ -6,15 +6,15 @@ const Projects = () => {
     return (
       <div className="project" key={i}>
         <h3>{project.name}</h3>
-        <p>{project.description}</p>
         <a href={project.link} target="_blank" rel="noopener noreferrer">
           project link
         </a>
+        <p>{project.description}</p>
       </div>
     );
   });
   return (
-    <section id="projects">
+    <section id="projects" className="max-width">
       <h2>Featured Projects</h2>
       {projectsJSX}
     </section>
