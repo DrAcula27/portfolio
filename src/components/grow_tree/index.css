@@ -1,7 +1,48 @@
+#container {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* quote */
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+#quote {
+  font-family: "Caveat", cursive;
+  font-size: 4em;
+  animation: fadeInOut 5s;
+  -webkit-animation: fadeInOut 5s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* planting seed animation */
 #seed,
 #wave {
-  margin: 175px auto;
   grid-area: main;
 }
 
@@ -12,40 +53,32 @@
   height: 40px;
   margin: 0 auto;
   background: var(--secondary-dark-color);
-  -moz-animation-name: plant;
   -webkit-animation-name: plant;
   animation-name: plant;
-  -moz-animation-timing-function: linear;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
-  -moz-animation-duration: 2s;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
-  -moz-animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
 
 #wave {
+  margin: 40vh auto;
   position: relative;
   opacity: 0;
   top: 0;
   width: 2px;
   height: 1px;
   border: var(--primary-light-color) 7px solid;
-  -moz-border-radius: 300px / 150px;
   -webkit-border-radius: 300px / 150px;
   border-radius: 300px / 150px;
-  -moz-animation-name: ripple;
   -webkit-animation-name: ripple;
   animation-name: ripple;
-  -moz-animation-delay: 2s;
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
-  -moz-animation-duration: 2s;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
-  -moz-animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
@@ -59,16 +92,12 @@
   width: 2px;
   height: 1px;
   border: var(--primary-light-color) 5px solid;
-  -moz-border-radius: 300px / 150px;
   -webkit-border-radius: 300px / 150px;
   border-radius: 300px / 150px;
-  -moz-animation-name: ripple-2;
   -webkit-animation-name: ripple-2;
   animation-name: ripple-2;
-  -moz-animation-duration: 2s;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
-  -moz-animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
@@ -104,19 +133,11 @@
 
 @keyframes plant {
   to {
-    top: 190px;
+    top: 50vh;
   }
 }
 
 /* growing tree animation */
-#container {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 #tree {
   background-color: var(--accent-color);
   mask: url(../../tree.svg) center no-repeat;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import acorn from "../../acorn.svg";
 import "./index.css";
 
-const AnimatedTree = () => {
+const GrowTree = ({ onFinish }) => {
   const [isHidden, setIsHidden] = useState("");
 
   const toggleHidden = () => {
@@ -13,12 +13,16 @@ const AnimatedTree = () => {
     const timer = setTimeout(() => {
       toggleHidden();
     }, 4000);
+    onFinish();
     return () => clearTimeout(timer);
     // eslint-disable-next-line
-  }, []);
+  }, [onFinish]);
 
   return (
     <div id="container">
+      <div id="quote" className={isHidden ? "hidden" : ""}>
+        From little seeds grow mighty trees.
+      </div>
       <div id="seed" className={isHidden ? "hidden" : ""}>
         <img src={acorn} alt={"seed"} />
       </div>
@@ -30,4 +34,4 @@ const AnimatedTree = () => {
   );
 };
 
-export default AnimatedTree;
+export default GrowTree;

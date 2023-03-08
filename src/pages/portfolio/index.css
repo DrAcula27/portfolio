@@ -1,0 +1,6 @@
+.portfolio-container {
+  /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
+  background: url("../../tree.svg") center / 800px no-repeat;
+  width: 90vw;
+  margin: 0 auto;
+}
