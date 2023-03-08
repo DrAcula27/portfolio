@@ -19,6 +19,8 @@ My portfolio is bootstrapped with `create-react-app` and uses the following tech
 
 - <img src="https://raw.githubusercontent.com/facebook/react/main/fixtures/attribute-behavior/public/favicon.ico" width="20" height="20" /> [React](https://reactjs.org/)
 - <img src="https://raw.githubusercontent.com/nodejs/nodejs.org/main/static/images/logos/js-green.svg" width="20" height="20" /> [Node](https://nodejs.org/en/)
+- [Skeleton CSS](http://getskeleton.com/)
+- [Normalize.css](https://necolas.github.io/normalize.css/)
 
 ## Attributions
 
