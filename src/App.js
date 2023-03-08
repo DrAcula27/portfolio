@@ -1,41 +1,24 @@
+import { useState } from "react";
 import { useEffect, useRef } from "react";
-// import { Router } from "react-router-dom";
 import "./App.css";
 import GrowTree from "./components/grow_tree";
 import Portfolio from "./pages/portfolio";
 
 function App() {
-  // const [isFirstVisit, setIsFirstVisit] = useState(false);
-
-  // useEffect(() => {
-  //   const isFirstVisit = !localStorage.getItem("hasVisitedBefore");
-  //   if (isFirstVisit) {
-  //     localStorage.setItem("hasVisitedBefore", true);
-  //     setIsFirstVisit(true);
-  //   }
-  // }, []);
-  const hasVisitedBeforeRef = useRef(false);
+  const [isDisplayed, setIsDisplayed] = useState(false);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    if (!hasVisitedBeforeRef.current) {
-      hasVisitedBeforeRef.current = true;
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      setIsDisplayed(true);
+      setTimeout(() => {
+        setIsDisplayed(false);
+      }, 8000);
     }
   }, []);
 
-  return (
-    <div className="App">
-      {/* {isFirstVisit ? (
-        <GrowTree onFinish={() => setIsFirstVisit(false)} />
-      ) : (
-        <Portfolio />
-      )} */}
-      {hasVisitedBeforeRef.current ? (
-        <GrowTree onFinish={() => (hasVisitedBeforeRef.current = true)} />
-      ) : (
-        <Portfolio />
-      )}
-    </div>
-  );
+  return <div>{isDisplayed ? <GrowTree /> : <Portfolio />}</div>;
 }
 
 export default App;

@@ -23,17 +23,13 @@ app.use(express.static(path.join(__dirname, "build")));
 
 // ROUTES
 
-// test route
-app.get("/test_route", (req, res) => {
-  res.send("test route");
-});
-
 // catch-all route, must be last in route list
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 // tell server where to listen. Must not be 3000 as React listens there.
-app.listen(5000, () => {
-  console.log(`Server is Listening on 5000`);
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Server is Listening on port ${PORT}`);
 });

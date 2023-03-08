@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import acorn from "../../acorn.svg";
 import "./index.css";
 
-const GrowTree = ({ onFinish }) => {
+const GrowTree = () => {
   const [isHidden, setIsHidden] = useState("");
 
   const toggleHidden = () => {
@@ -13,10 +13,9 @@ const GrowTree = ({ onFinish }) => {
     const timer = setTimeout(() => {
       toggleHidden();
     }, 4000);
-    onFinish();
     return () => clearTimeout(timer);
     // eslint-disable-next-line
-  }, [onFinish]);
+  }, []);
 
   return (
     <div id="container">
