@@ -16,9 +16,11 @@
 
 ## Demo
 
-![demo](./images/demo.png)
-
-### 🏠 [Homepage](https://github.com/DrAcula27/portfolio#readme)
+<p align="center">
+  <a href="https://danielle-andrews.netlify.app/" target="_blank">
+    <img alt="portfolio link" src="./images/demo.PNG" />
+  </a>
+</p>
 
 ## Author
 
