@@ -380,6 +380,7 @@ br.clear {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
+  justify-content: center;
   align-items: stretch;
 }
 
@@ -2148,6 +2149,10 @@ input[type='reset']:active {
 
 .item header h3 {
   font-size: 1em;
+}
+
+.item img {
+  max-width: 300px;
 }
 
 /* Icons */
