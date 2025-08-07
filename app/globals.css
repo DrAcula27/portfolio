@@ -1,26 +1,200 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* custom color palette */
+  --color-charcoal: #333333;
+  --color-gray: #555555;
+  --color-gray-light: #777777;
+  --color-gray-lighter: #999999;
+  --color-slate: #d1d1d1;
+  --color-slate-light: #e6e6e6;
+  --color-slate-lighter: #f9f9f9;
+  --color-white: #ffffff;
+  --color-blue: #57cbff;
+  --color-pink: #ff7cc8;
+
+  /* semantic color scales */
+  --color-neutral-50: #f9f9f9;
+  --color-neutral-100: #e6e6e6;
+  --color-neutral-200: #d1d1d1;
+  --color-neutral-300: #999999;
+  --color-neutral-400: #777777;
+  --color-neutral-500: #555555;
+  --color-neutral-600: #444444;
+  --color-neutral-700: #333333;
+  --color-neutral-800: #222222;
+  --color-neutral-900: #111111;
+
+  --color-primary-50: #e6f9ff;
+  --color-primary-100: #b3ecff;
+  --color-primary-200: #80dfff;
+  --color-primary-300: #4dd2ff;
+  --color-primary-400: #1ac5ff;
+  --color-primary-500: #57cbff;
+  --color-primary-600: #0099cc;
+  --color-primary-700: #007399;
+  --color-primary-800: #004d66;
+  --color-primary-900: #002633;
+
+  --color-secondary-50: #ffe6f5;
+  --color-secondary-100: #ffb3e6;
+  --color-secondary-200: #ff80d6;
+  --color-secondary-300: #ff4dc7;
+  --color-secondary-400: #ff1ab8;
+  --color-secondary-500: #ff7cc8;
+  --color-secondary-600: #cc0099;
+  --color-secondary-700: #990073;
+  --color-secondary-800: #66004d;
+  --color-secondary-900: #330026;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
+    /* Next.js default variables */
+    --background: #ffffff;
+    --foreground: #171717;
+
+    /* custom color variables */
+    --color-charcoal: #333333;
+    --color-gray: #555555;
+    --color-gray-light: #777777;
+    --color-gray-lighter: #999999;
+    --color-slate: #d1d1d1;
+    --color-slate-light: #e6e6e6;
+    --color-slate-lighter: #f9f9f9;
+    --color-white: #ffffff;
+    --color-blue: #57cbff;
+    --color-pink: #ff7cc8;
+
+    /* semantic variables */
+    --color-text-primary: var(--color-charcoal);
+    --color-text-secondary: var(--color-gray);
+    --color-text-muted: var(--color-gray-light);
+    --color-bg-primary: var(--color-white);
+    --color-bg-secondary: var(--color-slate-lighter);
+    --color-border: var(--color-slate);
+    --color-accent: var(--color-blue);
+    --color-accent-secondary: var(--color-pink);
+
+    /* shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(51, 51, 51, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(51, 51, 51, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(51, 51, 51, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(51, 51, 51, 0.1);
+
+    /* font variables */
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+  }
+
+  /* dark mode - prefer using css media query over data attributes for better performance */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+
+      /* update custom variables for dark mode */
+      --color-text-primary: var(--color-white);
+      --color-text-secondary: var(--color-slate);
+      --color-text-muted: var(--color-slate-light);
+      --color-bg-primary: var(--color-charcoal);
+      --color-bg-secondary: var(--color-gray);
+      --color-border: var(--color-gray-light);
+    }
+  }
+
+  /* manual dark mode toggle */
+  [data-theme='dark'] {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-text-primary: var(--color-white);
+    --color-text-secondary: var(--color-slate);
+    --color-text-muted: var(--color-slate-light);
+    --color-bg-primary: var(--color-charcoal);
+    --color-bg-secondary: var(--color-gray);
+    --color-border: var(--color-gray-light);
+  }
+
+  /* base element styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono), system-ui, -apple-system,
+      sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* remove default margins and improve typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  /* focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* button components */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
+    @apply bg-blue text-white hover:opacity-90 focus:ring-2 focus:ring-blue focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
+    @apply border-2 border-blue text-blue hover:bg-blue hover:text-white focus:ring-2 focus:ring-blue focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 text-base font-medium rounded-lg transition-all duration-300;
+    @apply text-neutral-700 hover:text-blue hover:bg-neutral-50 focus:ring-2 focus:ring-blue focus:ring-offset-2;
+  }
+
+  /* card component */
+  .card {
+    @apply bg-white rounded-xl shadow-md border border-neutral-200 p-6 transition-all duration-300;
+    @apply hover:shadow-lg focus-within:shadow-lg;
+  }
+
+  /* text utilities */
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue to-pink bg-clip-text text-transparent;
+  }
+
+  /* layout utilities */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-6 max-w-6xl;
+  }
+
+  /* animation utilities */
+  .fade-in {
+    @apply opacity-0 translate-y-4 transition-all duration-500;
+  }
+
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
 }
