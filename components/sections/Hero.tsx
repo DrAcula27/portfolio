@@ -91,6 +91,7 @@ export default function Hero() {
             occasionally designing) exceptional digital experiences.
             Currently, I am focused on building accessible,
             human-centered products.
+            {/* TODO: replace this blurb with my GitHub details like done here: https://portfolio-jirihofman.vercel.app/ */}
           </motion.p>
 
           {/* buttons */}
