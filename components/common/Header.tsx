@@ -65,7 +65,7 @@ export default function Header() {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-neutral-500/20 backdrop-blur-md shadow-sm'
+          ? 'bg-neutral-500/80 backdrop-blur-md shadow-sm'
           : 'bg-transparent'
       }`}
     >
@@ -108,7 +108,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 hover:text-pink transition-colors cursor-pointer"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -121,13 +121,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t bg-neutral-500">
+          <div className="md:hidden mt-4 pb-4 bg-neutral-500">
             <div className="flex flex-col space-y-4 pt-4">
               {navigation.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-center transition-colors ${
+                  className={`text-center border py-4 transition-colors ${
                     activeSection === item.href.slice(1)
                       ? 'text-pink'
                       : 'hover:text-blue cursor-pointer'
@@ -140,7 +140,7 @@ export default function Header() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-t pt-4 text-center hover:text-pink transition-colors"
+                className="border py-4 text-center hover:text-pink transition-colors"
                 title="Resume opens in a new tab"
               >
                 Resume
