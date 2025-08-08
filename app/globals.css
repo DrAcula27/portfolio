@@ -156,12 +156,14 @@
   /* button components */
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
-    @apply bg-blue text-white hover:opacity-90 focus:ring-2 focus:ring-blue focus:ring-offset-2;
+    @apply bg-primary-500 text-white hover:opacity-90 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply dark:bg-primary-600 dark:text-slate-lighter dark:hover:opacity-90 dark:focus:ring-primary-600;
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
-    @apply border-2 border-blue text-blue hover:bg-blue hover:text-white focus:ring-2 focus:ring-blue focus:ring-offset-2;
+    @apply bg-secondary-500 text-white hover:opacity-90 focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+    @apply dark:bg-secondary-600 dark:text-slate-lighter dark:hover:opacity-90 dark:focus:ring-secondary-600;
   }
 
   .btn-ghost {
