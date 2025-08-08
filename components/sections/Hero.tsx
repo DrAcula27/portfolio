@@ -2,13 +2,11 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import GitHubStatsWidget from '../ui/GitHubStatsWidget';
 import { SiGithub } from 'react-icons/si';
-import {
-  FaLinkedin,
-  FaArrowRight,
-  FaArrowDown,
-} from 'react-icons/fa';
+import { FaLinkedin, FaArrowDown } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
+import { PiMouseScrollLight } from 'react-icons/pi';
 
 const socialLinks = [
   {
@@ -66,7 +64,7 @@ export default function Hero() {
         >
           {/* greeting */}
           <motion.p
-            className="text-blue font-medium text-lg"
+            className="text-secondary-400 dark:text-secondary-200 font-medium text-lg mb-0"
             variants={itemVariants}
           >
             Hi, my name is
@@ -74,8 +72,8 @@ export default function Hero() {
 
           {/* main heading */}
           <motion.div variants={itemVariants}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
-              Danielle Andrews
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 hover:text-pink transition-colors">
+              Danielle Andrews.
             </h1>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold">
               I build things for the web.
@@ -91,7 +89,10 @@ export default function Hero() {
             occasionally designing) exceptional digital experiences.
             Currently, I am focused on building accessible,
             human-centered products.
-            {/* TODO: replace this blurb with my GitHub details like done here: https://portfolio-jirihofman.vercel.app/ */}
+            {/* GitHub Stats Widget */}
+            <motion.div variants={itemVariants}>
+              <GitHubStatsWidget username="dracula27" />
+            </motion.div>
           </motion.p>
 
           {/* buttons */}
@@ -104,14 +105,21 @@ export default function Hero() {
               className="group btn-primary flex items-center gap-2"
             >
               View My Work
-              <FaArrowRight
-                size={20}
-                className="group-hover:translate-x-1 transition-transform"
+              <FaArrowDown
+                size={18}
+                className="group-hover:translate-y-1 transition-transform"
               />
             </Link>
 
-            <Link href="#contact" className="btn-secondary">
+            <Link
+              href="#contact"
+              className="group btn-primary flex items-center gap-2"
+            >
               Get In Touch
+              <FaArrowDown
+                size={18}
+                className="group-hover:translate-y-1 transition-transform"
+              />
             </Link>
           </motion.div>
 
@@ -137,11 +145,12 @@ export default function Hero() {
 
           {/* scroll indicator */}
           <motion.div
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            // className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="flex justify-center mt-12"
             variants={itemVariants}
           >
             <Link href="#about">
-              <FaArrowDown
+              <PiMouseScrollLight
                 size={32}
                 className="hover:text-pink transition-colors cursor-pointer animate-bounce"
               />
