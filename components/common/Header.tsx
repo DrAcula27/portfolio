@@ -8,8 +8,8 @@ import Image from 'next/image';
 const navigation = [
   { name: 'Home', href: '#hero' },
   { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -26,8 +26,8 @@ export default function Header() {
       const sections = [
         'hero',
         'about',
-        'projects',
         'experience',
+        'projects',
         'contact',
       ];
       const scrollPosition = window.scrollY + 100;
