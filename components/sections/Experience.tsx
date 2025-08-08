@@ -16,7 +16,7 @@ export default function Experience() {
           className="text-center"
         >
           <h2 className="text-4xl font-bold mb-4">Experience</h2>
-          <p className="text-lg text-neutral-700 dark:text-neutral-200">
+          <p className="text-lg">
             I have worked on various projects that have helped me grow
             as a developer. My experience includes web development,
             mobile applications, and more.

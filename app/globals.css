@@ -50,10 +50,6 @@
 
 @layer base {
   :root {
-    /* Next.js default variables */
-    --background: #ffffff;
-    --foreground: #171717;
-
     /* custom color variables */
     --color-charcoal: #333333;
     --color-gray: #555555;
@@ -87,23 +83,19 @@
     --font-mono: var(--font-geist-mono);
   }
 
-  /* dark mode - prefer using css media query over data attributes for better performance */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #0a0a0a;
-      --foreground: #ededed;
-
-      /* update custom variables for dark mode */
-      --color-text-primary: var(--color-white);
-      --color-text-secondary: var(--color-slate);
-      --color-text-muted: var(--color-slate-light);
-      --color-bg-primary: var(--color-charcoal);
-      --color-bg-secondary: var(--color-gray);
-      --color-border: var(--color-gray-light);
-    }
+  /* manual light mode toggle - override system preference */
+  [data-theme='light'] {
+    --background: var(--color-slate-lighter);
+    --foreground: var(--color-charcoal);
+    --color-text-primary: var(--color-charcoal);
+    --color-text-secondary: var(--color-gray);
+    --color-text-muted: var(--color-gray-light);
+    --color-bg-primary: var(--color-white);
+    --color-bg-secondary: var(--color-slate-lighter);
+    --color-border: var(--color-slate);
   }
 
-  /* manual dark mode toggle */
+  /* manual dark mode toggle - override system preference */
   [data-theme='dark'] {
     --background: #0a0a0a;
     --foreground: #ededed;

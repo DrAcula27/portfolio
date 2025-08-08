@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { TiThMenu } from 'react-icons/ti';
 import { IoCloseCircle } from 'react-icons/io5';
 import Image from 'next/image';
+import DarkModeToggle from '../ui/DarkModeToggle';
 
 const navigation = [
   { name: 'Home', href: '#hero' },
@@ -65,20 +66,23 @@ export default function Header() {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-neutral-500/80 backdrop-blur-md shadow-sm'
+          ? 'bg-neutral-600/80 backdrop-blur-md shadow-sm text-neutral-100'
           : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <button onClick={() => scrollToSection('#hero')}>
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              height={32}
-              width={32}
-            />
-          </button>
+          <div className="flex items-center space-x-4">
+            <button onClick={() => scrollToSection('#hero')}>
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                height={32}
+                width={32}
+              />
+            </button>
+            <DarkModeToggle />
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -86,10 +90,10 @@ export default function Header() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`transition-colors font-medium ${
+                className={`transition-colors font-semibold ${
                   activeSection === item.href.slice(1)
                     ? 'text-pink'
-                    : 'hover:text-blue cursor-pointer'
+                    : 'hover:blue cursor-pointer'
                 }`}
               >
                 {item.name}
@@ -99,7 +103,7 @@ export default function Header() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-pink transition-colors border-l border-white pl-8"
+              className="font-semibold hover:text-pink transition-colors border-l border-pink pl-8"
               title="Resume opens in a new tab"
             >
               Resume

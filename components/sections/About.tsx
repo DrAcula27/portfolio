@@ -16,7 +16,7 @@ export default function About() {
           className="text-center"
         >
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-lg text-neutral-700 dark:text-neutral-200">
+          <p className="text-lg">
             I am a passionate developer with a love for creating
             beautiful and functional web applications. My journey in
             tech has been driven by curiosity and a desire to solve

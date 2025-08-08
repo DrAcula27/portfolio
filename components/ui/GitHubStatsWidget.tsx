@@ -169,7 +169,7 @@ const GitHubStatsWidget = ({
       initial="hidden"
       animate="visible"
     >
-      <p className="text-neutral-700 dark:text-neutral-200 text-lg max-w-xl mx-auto leading-relaxed mb-0">
+      <motion.p className="text-lg max-w-xl mx-auto leading-relaxed mb-0">
         In the last 90 days on GitHub I{' '}
         {stats.commits > 0 && (
           <>
@@ -237,7 +237,7 @@ const GitHubStatsWidget = ({
           </>
         )}{' '}
         in public repositories.
-      </p>
+      </motion.p>
     </motion.div>
   );
 };

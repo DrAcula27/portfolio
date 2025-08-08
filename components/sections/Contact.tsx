@@ -16,7 +16,7 @@ export default function Contact() {
           className="text-center"
         >
           <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
-          <p className="text-lg text-neutral-700 dark:text-neutral-200">
+          <p className="text-lg">
             I would love to hear from you! Whether you have a
             question, want to collaborate, or just want to say hi,
             feel free to reach out.

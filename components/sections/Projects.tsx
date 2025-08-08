@@ -16,7 +16,7 @@ export default function Projects() {
           className="text-center"
         >
           <h2 className="text-4xl font-bold mb-4">Projects</h2>
-          <p className="text-lg text-neutral-700 dark:text-neutral-200">
+          <p className="text-lg">
             Here are some of the projects I have worked on. Each
             project showcases my skills and passion for web
             development.

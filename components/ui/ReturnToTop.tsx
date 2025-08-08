@@ -13,7 +13,7 @@ export default function ReturnToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-4 right-4 m-2 rounded-full bg-neutral-500 hover:bg-secondary-500 focus:outline-none focus:ring-2 focus:ring-secondary-500 cursor-pointer dark:bg-neutral-600  dark:hover:bg-secondary-600 dark:focus:ring-secondary-600"
+      className="fixed bottom-4 right-4 m-2 rounded-full hover:bg-secondary-300 focus:outline-none focus:ring-2 focus:ring-secondary-500 cursor-pointer"
       aria-label="Return to top"
       title="Return to top"
     >
