@@ -73,7 +73,10 @@ export default function Header() {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <button onClick={() => scrollToSection('#hero')}>
+            <button
+              onClick={() => scrollToSection('#hero')}
+              className="cursor-pointer"
+            >
               <Image
                 src="/logo.png"
                 alt="Logo"
