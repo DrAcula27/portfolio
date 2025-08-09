@@ -72,9 +72,10 @@ export default function Hero() {
 
           {/* main heading */}
           <motion.div variants={itemVariants}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 hover:text-pink transition-colors">
-              Danielle Andrews.
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold underline hover:text-pink transition-colors">
+              Danielle Andrews
             </h1>
+
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold">
               I build things for the web.
             </h2>
@@ -89,11 +90,12 @@ export default function Hero() {
             occasionally designing) exceptional digital experiences.
             Currently, I am focused on building accessible,
             human-centered products.
-            {/* GitHub Stats Widget */}
-            <motion.div variants={itemVariants}>
-              <GitHubStatsWidget username="dracula27" />
-            </motion.div>
           </motion.p>
+
+          {/* github stats widget */}
+          <motion.div variants={itemVariants}>
+            <GitHubStatsWidget username="dracula27" />
+          </motion.div>
 
           {/* buttons */}
           <motion.div
