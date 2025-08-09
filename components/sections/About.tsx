@@ -4,6 +4,58 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 30, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring' as const,
+      stiffness: 100,
+      damping: 12,
+    },
+  },
+};
+
+const slideInFromLeft = {
+  hidden: { x: -50, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring' as const,
+      stiffness: 100,
+      damping: 12,
+      delay: 0.2,
+    },
+  },
+};
+
+const slideInFromRight = {
+  hidden: { x: 50, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring' as const,
+      stiffness: 100,
+      damping: 12,
+      delay: 0.4,
+    },
+  },
+};
+
 export default function About() {
   return (
     <section
@@ -12,23 +64,37 @@ export default function About() {
     >
       <div className="container mx-auto max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="space-y-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            amount: 0.2, // trigger when 20% of the section is visible
+            margin: '0px 0px -50px 0px', // start animation 50px before section comes into view
+          }}
         >
           {/* section header */}
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            variants={itemVariants}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               About Me
             </h2>
             <div className="w-20 h-1 bg-pink mx-auto"></div>
-          </div>
+          </motion.div>
 
           {/* main content grid */}
           <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
             {/* text content */}
-            <div className="space-y-8">
+            <motion.div
+              className="space-y-8"
+              variants={slideInFromLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <p className="text-lg leading-relaxed">
                 Hello! I&apos;m{' '}
                 <span className="font-bold text-pink">
@@ -69,9 +135,15 @@ export default function About() {
                 projects, and build tools for salmon conservation and
                 environmental research.
               </p>
-            </div>
+            </motion.div>
             {/* image */}
-            <div className="relative">
+            <motion.div
+              className="relative"
+              variants={slideInFromRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <div className="aspect-square p-1">
                 <Image
                   src="/logo_self.png"
@@ -82,16 +154,42 @@ export default function About() {
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
+
           {/* skills grid */}
-          <div className="space-y-8">
+          <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.1,
+              margin: '0px 0px -100px 0px',
+            }}
+          >
             <h3 className="text-2xl font-semibold text-center mb-2 mt-3">
               Technologies I work with daily:
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {/* frontend development */}
-              <div className="space-y-3">
+              <motion.div
+                className="space-y-3"
+                variants={{
+                  hidden: { y: 20, opacity: 0 },
+                  visible: {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      delay: 0.1,
+                      duration: 0.5,
+                    },
+                  },
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
                 <h4 className="font-semibold text-lg">
                   Frontend Development
                 </h4>
@@ -124,10 +222,26 @@ export default function About() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* backend development */}
-              <div className="space-y-3">
+              <motion.div
+                className="space-y-3"
+                variants={{
+                  hidden: { y: 20, opacity: 0 },
+                  visible: {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      delay: 0.1,
+                      duration: 0.5,
+                    },
+                  },
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
                 <h4 className="font-semibold text-lg">
                   Backend Development
                 </h4>
@@ -149,10 +263,26 @@ export default function About() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* cloud & infrastructure */}
-              <div className="space-y-3">
+              <motion.div
+                className="space-y-3"
+                variants={{
+                  hidden: { y: 20, opacity: 0 },
+                  visible: {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      delay: 0.1,
+                      duration: 0.5,
+                    },
+                  },
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
                 <h4 className="font-semibold text-lg">
                   Cloud & Infrastructure
                 </h4>
@@ -171,10 +301,26 @@ export default function About() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* data science & analytics */}
-              <div className="space-y-3">
+              <motion.div
+                className="space-y-3"
+                variants={{
+                  hidden: { y: 20, opacity: 0 },
+                  visible: {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      delay: 0.1,
+                      duration: 0.5,
+                    },
+                  },
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
                 <h4 className="font-semibold text-lg">
                   Data Science & Analytics
                 </h4>
@@ -188,9 +334,9 @@ export default function About() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

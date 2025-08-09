@@ -31,20 +31,21 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
+      delayChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
+  hidden: { y: 30, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
       type: 'spring' as const,
       stiffness: 100,
+      damping: 12,
     },
   },
 };
@@ -60,11 +61,12 @@ export default function Hero() {
           className="text-center space-y-8"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
           {/* greeting */}
           <motion.p
-            className="text-secondary-400 dark:text-secondary-200 font-medium text-lg mb-0"
+            className="text-pink font-semibold text-lg mb-0"
             variants={itemVariants}
           >
             Hi, my name is
@@ -72,8 +74,13 @@ export default function Hero() {
 
           {/* main heading */}
           <motion.div variants={itemVariants}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold underline hover:text-pink transition-colors">
-              Danielle Andrews
+            <h1>
+              <span className="text-4xl md:text-6xl lg:text-7xl font-bold underline hover:text-pink transition-all duration-100 ease-in-out">
+                Danielle Andrews
+              </span>
+              <span className="text-4xl md:text-6xl lg:text-7xl font-bold">
+                .
+              </span>
             </h1>
 
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold">
@@ -103,24 +110,24 @@ export default function Hero() {
             variants={itemVariants}
           >
             <Link
-              href="#projects"
-              className="group btn-primary flex items-center gap-2"
+              href="#experience"
+              className="group btn-primary flex items-center gap-2 hover:scale-105 transition-transform duration-100 ease-in-out active:scale-95"
             >
               View My Work
               <FaArrowDown
                 size={18}
-                className="group-hover:translate-y-1 transition-transform"
+                className="group-hover:translate-y-1 transition-transform duration-100 ease-in-out"
               />
             </Link>
 
             <Link
               href="#contact"
-              className="group btn-primary flex items-center gap-2"
+              className="group btn-primary flex items-center gap-2 hover:scale-105 transition-transform duration-100 ease-in-out active:scale-95"
             >
               Get In Touch
               <FaArrowDown
                 size={18}
-                className="group-hover:translate-y-1 transition-transform"
+                className="group-hover:translate-y-1 transition-transform duration-100 ease-in-out"
               />
             </Link>
           </motion.div>
@@ -136,7 +143,7 @@ export default function Hero() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-blue transition-colors p-2 rounded-lg hover:bg-neutral-400"
+                className=" hover:text-blue hover:scale-125 transition-all duration-100 ease-in-out p-2"
                 aria-label={label}
                 title={label}
               >
