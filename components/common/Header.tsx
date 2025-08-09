@@ -128,7 +128,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 bg-neutral-500">
+          <div className="md:hidden mt-4 pb-4 bg-neutral-500 text-neutral-100">
             <div className="flex flex-col space-y-4 pt-4">
               {navigation.map((item) => (
                 <button
