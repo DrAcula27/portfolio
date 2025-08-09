@@ -4,8 +4,7 @@ import { useDarkMode } from '@/hooks/useDarkMode';
 import { LuMoon, LuSun, LuMonitor } from 'react-icons/lu';
 
 export default function DarkModeToggle() {
-  const { theme, toggleTheme, effectiveTheme, mounted } =
-    useDarkMode();
+  const { theme, toggleTheme, mounted } = useDarkMode();
 
   // prevent hydration mismatch
   if (!mounted) {
@@ -45,7 +44,8 @@ export default function DarkModeToggle() {
       onClick={toggleTheme}
       className="relative inline-flex items-center justify-center w-10 h-10 rounded-full cursor-pointer
                  transition-all duration-200 ease-in-out
-                 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                 focus:outline-none focus:ring-2 focus:ring-purple focus:ring-offset-1
+                 hover:text-purple"
       aria-label={getLabel()}
       title={getLabel()}
     >
