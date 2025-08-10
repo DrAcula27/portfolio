@@ -136,6 +136,7 @@ export default function About() {
                 environmental research.
               </p>
             </motion.div>
+
             {/* image */}
             <motion.div
               className="relative"
@@ -144,12 +145,11 @@ export default function About() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <div className="aspect-square p-1">
+              <div className="aspect-square p-1 max-w-1/2 mx-auto md:max-w-full">
                 <Image
                   src="/logo_self.png"
                   alt="Danielle Andrews"
                   width={400}
-                  max-width={400}
                   height={400}
                   className="w-full h-full object-cover rounded-xl"
                 />
@@ -171,7 +171,7 @@ export default function About() {
             <h3 className="text-2xl font-semibold text-center mb-2 mt-3">
               Technologies I work with daily:
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 max-w-fit mx-auto sm:grid-cols-2 md:max-w-full md:mx-0 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {/* frontend development */}
               <motion.div
                 className="space-y-3"
