@@ -1,4 +1,3 @@
-// lib/types.ts
 export interface Project {
   id: string;
   title: string;
@@ -16,7 +15,8 @@ export interface Experience {
   title: string;
   company: string;
   location: string;
-  duration: string;
+  startDate: Date;
+  endDate: Date;
   type:
     | 'Full-time'
     | 'Part-time'
