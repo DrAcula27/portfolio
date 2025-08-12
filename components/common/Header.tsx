@@ -95,8 +95,8 @@ export default function Header() {
                 onClick={() => scrollToSection(item.href)}
                 className={`transition-colors font-semibold ${
                   activeSection === item.href.slice(1)
-                    ? 'text-pink'
-                    : 'hover:blue cursor-pointer'
+                    ? 'text-secondary-500'
+                    : 'hover:text-primary-500 cursor-pointer'
                 }`}
               >
                 {item.name}
@@ -106,7 +106,7 @@ export default function Header() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold hover:text-pink transition-colors border-l border-pink pl-8"
+              className="font-semibold hover:text-secondary-500 transition-colors border-l border-secondary-500 pl-8"
               title="Resume opens in a new tab"
             >
               Resume
@@ -115,7 +115,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 hover:text-pink transition-colors cursor-pointer"
+            className="md:hidden p-2 hover:text-secondary-500 transition-colors cursor-pointer"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -136,8 +136,8 @@ export default function Header() {
                   onClick={() => scrollToSection(item.href)}
                   className={`text-center border py-4 transition-colors ${
                     activeSection === item.href.slice(1)
-                      ? 'text-pink'
-                      : 'hover:text-blue cursor-pointer'
+                      ? 'text-secondary-500'
+                      : 'hover:text-primary-500 cursor-pointer'
                   }`}
                 >
                   {item.name}
@@ -147,7 +147,7 @@ export default function Header() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border py-4 text-center hover:text-pink transition-colors"
+                className="border py-4 text-center hover:text-secondary-500 transition-colors"
                 title="Resume opens in a new tab"
               >
                 Resume

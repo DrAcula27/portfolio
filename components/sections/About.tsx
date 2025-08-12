@@ -82,7 +82,7 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               About Me
             </h2>
-            <div className="w-20 h-1 bg-pink mx-auto"></div>
+            <div className="w-20 h-1 bg-secondary-500 mx-auto"></div>
           </motion.div>
 
           {/* main content grid */}
@@ -97,20 +97,20 @@ export default function About() {
             >
               <p className="text-lg leading-relaxed">
                 Hello! I&apos;m{' '}
-                <span className="font-bold text-pink">
+                <span className="font-bold text-secondary-500">
                   Danielle Andrews
                 </span>{' '}
                 — a{' '}
-                <span className="font-bold text-pink">
+                <span className="font-bold text-secondary-500">
                   full-stack software engineer
                 </span>
                 , U.S. Marine Corps{' '}
-                <span className="font-bold text-pink">veteran</span>,
+                <span className="font-bold text-secondary-500">veteran</span>,
                 and former mechanical engineer who loves building tech
                 that solves real-world problems.
                 <br className="mb-2" />
                 With{' '}
-                <span className="font-bold text-pink">
+                <span className="font-bold text-secondary-500">
                   over 5 years of experience
                 </span>{' '}
                 in full-stack development, I&apos;ve worked across
@@ -126,7 +126,7 @@ export default function About() {
                 Today, I{' '}
                 <Link
                   href="#experience"
-                  className="font-bold text-blue hover:underline transition-all duration-300"
+                  className="font-bold text-primary-500 hover:underline transition-all duration-300"
                 >
                   consult
                 </Link>{' '}
@@ -195,29 +195,29 @@ export default function About() {
                 </h4>
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-blue text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-charcoal text-sm rounded-full">
                       HTML
                     </span>
-                    <span className="px-3 py-1 bg-blue text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-charcoal text-sm rounded-full">
                       CSS
                     </span>
-                    <span className="px-3 py-1 bg-blue text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-charcoal text-sm rounded-full">
                       JavaScript
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-blue text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-charcoal text-sm rounded-full">
                       TypeScript
                     </span>
-                    <span className="px-3 py-1 bg-blue text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-charcoal text-sm rounded-full">
                       React
                     </span>
-                    <span className="px-3 py-1 bg-blue text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-charcoal text-sm rounded-full">
                       Next.js
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-blue text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-charcoal text-sm rounded-full">
                       Tailwind CSS
                     </span>
                   </div>
@@ -288,15 +288,15 @@ export default function About() {
                 </h4>
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-pink text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-secondary-500 text-charcoal text-sm rounded-full">
                       AWS Lambda
                     </span>
-                    <span className="px-3 py-1 bg-pink text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-secondary-500 text-charcoal text-sm rounded-full">
                       AWS S3
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-pink text-charcoal text-sm rounded-full">
+                    <span className="px-3 py-1 bg-secondary-500 text-charcoal text-sm rounded-full">
                       AWS DynamoDB
                     </span>
                   </div>
