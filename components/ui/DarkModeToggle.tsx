@@ -44,8 +44,8 @@ export default function DarkModeToggle() {
       onClick={toggleTheme}
       className="relative inline-flex items-center justify-center w-10 h-10 rounded-full cursor-pointer
                  transition-all duration-200 ease-in-out
-                 focus:outline-none focus:ring-2 focus:ring-purple focus:ring-offset-1
-                 hover:text-purple"
+                 focus:outline-none focus:ring-2 focus:ring-accent-cool focus:ring-offset-1
+                 hover:text-accent-cool"
       aria-label={getLabel()}
       title={getLabel()}
     >
