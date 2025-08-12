@@ -1,6 +1,18 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
+import { JSX, useState } from 'react';
+import {
+  LuCalendar,
+  LuMapPin,
+  LuExternalLink,
+  LuCode,
+  LuDatabase,
+  LuZap,
+  LuChevronDown,
+  LuChevronUp,
+} from 'react-icons/lu';
+import { experiences } from '@/data/experience';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -26,15 +38,74 @@ const itemVariants = {
   },
 };
 
+const cardVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring' as const,
+      stiffness: 80,
+      damping: 15,
+    },
+  },
+};
+
+const expandVariants = {
+  // collapsed: { height: 0, opacity: 0 },
+  // expanded: {
+  //   height: 'auto',
+  //   opacity: 1,
+  //   transition: {
+  //     height: { duration: 0.3, ease: 'easeOut' },
+  //     opacity: { duration: 0.2, delay: 0.1 },
+  //   },
+  // },
+  collapsed: {
+    opacity: 0,
+    scale: 0.95,
+    transition: {
+      duration: 0.2,
+    },
+  },
+  expanded: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.3,
+      ease: 'easeOut' as const,
+    },
+  },
+};
+
+const techIcons: Record<string, JSX.Element> = {
+  React: <LuCode className="w-4 h-4" />,
+  'Node.js': <LuDatabase className="w-4 h-4" />,
+  AWS: <LuZap className="w-4 h-4" />,
+  TypeScript: <LuCode className="w-4 h-4" />,
+  Python: <LuCode className="w-4 h-4" />,
+  'Vue.js': <LuCode className="w-4 h-4" />,
+};
+
 export default function Experience() {
+  const [expandedCards, setExpandedCards] = useState<number[]>([]);
+
+  const toggleCard = (id: number) => {
+    setExpandedCards((prev) =>
+      prev.includes(id)
+        ? prev.filter((cardId) => cardId !== id)
+        : [...prev, id]
+    );
+  };
+
   return (
     <section
       id="experience"
-      className="min-h-screen flex items-center justify-center px-6 pt-16"
+      className="min-h-screen flex items-center justify-center px-6 py-20"
     >
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
         <motion.div
-          className="space-y-8"
+          className="space-y-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -53,12 +124,253 @@ export default function Experience() {
             <div className="w-20 h-1 bg-pink mx-auto"></div>
           </motion.div>
 
-          {/* main content */}
-          <p className="text-lg">
-            I have worked on various projects that have helped me grow
-            as a developer. My experience includes web development,
-            mobile applications, and more.
-          </p>
+          {/* Experience Timeline */}
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange to-purple hidden md:block"></div>
+
+            <div className="space-y-8">
+              {experiences.map((exp) => {
+                const isExpanded = expandedCards.includes(exp.id);
+
+                return (
+                  <motion.div
+                    key={exp.id}
+                    className="relative"
+                    variants={cardVariants}
+                  >
+                    {/* Timeline Dot */}
+                    <div className="absolute left-6 top-8 w-4 h-4 bg-secondary-500 rounded-full border-4 border-neutral-50 shadow-lg hidden md:block"></div>
+
+                    {/* Experience Card */}
+                    <div className="md:ml-20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                      {/* Always Visible Header */}
+                      <div className="p-8">
+                        <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6">
+                          <div className="mb-4 lg:mb-0">
+                            <h3 className="text-2xl font-bold">
+                              {exp.title}
+                            </h3>
+                            <div className="flex items-center gap-4 mb-2">
+                              <span className="font-semibold text-lg">
+                                {exp.company}
+                              </span>
+                              {exp.link && (
+                                <a
+                                  href={exp.link}
+                                  className="text-primary-500 hover:text-primary-700 transition-colors"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <LuExternalLink className="w-4 h-4" />
+                                </a>
+                              )}
+                            </div>
+                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm">
+                              <div className="flex items-center gap-1">
+                                <LuCalendar className="w-4 h-4" />
+                                {exp.startDate.toLocaleDateString()} -
+                                {exp.endDate
+                                  ? ` ${exp.endDate.toLocaleDateString()}`
+                                  : ' Present'}
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <LuMapPin className="w-4 h-4" />
+                                {exp.location}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex-shrink-0">
+                            <span
+                              className={`px-3 py-1 rounded-full text-sm font-medium ${
+                                exp.type === 'Full-time'
+                                  ? 'bg-green-100 text-green-700'
+                                  : 'bg-blue-100 text-blue-700'
+                              }`}
+                            >
+                              {exp.type}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Summary - Always Visible */}
+                        <p className="mb-6 leading-relaxed">
+                          {exp.summary}
+                        </p>
+
+                        {/* Core Technologies - Always Visible */}
+                        <div className="mb-6">
+                          <h4 className="font-semibold mb-3">
+                            Technologies:
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {exp.technologies
+                              .slice(0, 6)
+                              .map((tech, i) => (
+                                <span
+                                  key={i}
+                                  className="flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium transition-colors cursor-default"
+                                >
+                                  {techIcons[tech] || (
+                                    <LuCode className="w-4 h-4" />
+                                  )}
+                                  {tech}
+                                </span>
+                              ))}
+                            {exp.technologies.length > 6 && (
+                              <span className="px-3 py-1 rounded-full text-sm">
+                                +{exp.technologies.length - 6} more
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Expand/Collapse Button */}
+                        <motion.button
+                          onClick={() => toggleCard(exp.id)}
+                          className="flex items-center gap-2 font-semibold transition-colors"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          {isExpanded
+                            ? 'Show Less'
+                            : 'Show More Details'}
+                          {isExpanded ? (
+                            <LuChevronUp className="w-4 h-4" />
+                          ) : (
+                            <LuChevronDown className="w-4 h-4" />
+                          )}
+                        </motion.button>
+                      </div>
+
+                      {/* Expandable Content */}
+                      <AnimatePresence>
+                        {isExpanded && (
+                          <motion.div
+                            variants={expandVariants}
+                            initial="collapsed"
+                            animate="expanded"
+                            exit="collapsed"
+                            className="overflow-hidden"
+                          >
+                            <div className="px-8 pb-8 border-t pt-6">
+                              {/* Full Description */}
+                              <div className="mb-6">
+                                <h4 className="font-semibold mb-3">
+                                  Full Description:
+                                </h4>
+                                <p className="leading-relaxed">
+                                  {exp.fullDescription}
+                                </p>
+                              </div>
+
+                              {/* Key Achievements */}
+                              <div className="mb-6">
+                                <h4 className="font-semibold mb-3">
+                                  Key Achievements:
+                                </h4>
+                                <ul className="space-y-2">
+                                  {exp.achievements.map(
+                                    (achievement, i) => (
+                                      <li
+                                        key={i}
+                                        className="flex items-start gap-3"
+                                      >
+                                        <div className="w-2 h-2rounded-full mt-2 flex-shrink-0"></div>
+                                        <span className="">
+                                          {achievement}
+                                        </span>
+                                      </li>
+                                    )
+                                  )}
+                                </ul>
+                              </div>
+
+                              {/* Key Projects */}
+                              {exp.projects &&
+                                exp.projects.length > 0 && (
+                                  <div className="mb-6">
+                                    <h4 className="font-semibold mb-3">
+                                      Key Projects:
+                                    </h4>
+                                    <div className="space-y-4">
+                                      {exp.projects.map(
+                                        (project, i) => (
+                                          <div
+                                            key={i}
+                                            className="rounded-lg p-4"
+                                          >
+                                            <h5 className="font-semibold mb-2">
+                                              {project.title}
+                                            </h5>
+                                            <p className="mb-2">
+                                              {project.description}
+                                            </p>
+                                            <p className="text-sm font-medium">
+                                              Impact: {project.impact}
+                                            </p>
+                                          </div>
+                                        )
+                                      )}
+                                    </div>
+                                  </div>
+                                )}
+
+                              {/* All Technologies */}
+                              <div>
+                                <h4 className="font-semiboldmb-3">
+                                  All Technologies Used:
+                                </h4>
+                                <div className="flex flex-wrap gap-2">
+                                  {exp.technologies.map((tech, i) => (
+                                    <span
+                                      key={i}
+                                      className="flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium transition-colors cursor-default"
+                                    >
+                                      {techIcons[tech] || (
+                                        <LuCode className="w-4 h-4" />
+                                      )}
+                                      {tech}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+
+                      {/* Card Accent */}
+                      <div className="h-2 bg-gradient-to-r from-primary-500 to-purple"></div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            className="text-center pt-12"
+            variants={itemVariants}
+          >
+            <div className="rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">
+                Ready to work together?
+              </h3>
+              <p className="mb-6">
+                I am always open to discussing new opportunities and
+                interesting projects.
+              </p>
+              <motion.button
+                className="btn-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get In Touch
+              </motion.button>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
