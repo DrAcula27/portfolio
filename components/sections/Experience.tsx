@@ -12,6 +12,7 @@ import {
   LuChevronDown,
   LuChevronUp,
 } from 'react-icons/lu';
+import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 import { experiences } from '@/data/experience';
 
 const containerVariants = {
@@ -127,7 +128,7 @@ export default function Experience() {
           {/* Experience Timeline */}
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange to-purple hidden md:block"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-secondary-500 hidden md:block"></div>
 
             <div className="space-y-8">
               {experiences.map((exp) => {
@@ -139,8 +140,8 @@ export default function Experience() {
                     className="relative"
                     variants={cardVariants}
                   >
-                    {/* Timeline Dot */}
-                    <div className="absolute left-6 top-8 w-4 h-4 bg-secondary-500 rounded-full border-4 border-neutral-50 shadow-lg hidden md:block"></div>
+                    {/* Timeline arrow */}
+                    <MdKeyboardDoubleArrowRight className="absolute left-4 top-8 w-8 h-8 text-orange bg-orange-50 rounded-full shadow-lg hidden md:block" />
 
                     {/* Experience Card */}
                     <div className="md:ml-20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
@@ -182,11 +183,7 @@ export default function Experience() {
                           </div>
                           <div className="flex-shrink-0">
                             <span
-                              className={`px-3 py-1 rounded-full text-sm font-medium ${
-                                exp.type === 'Full-time'
-                                  ? 'bg-green-100 text-green-700'
-                                  : 'bg-blue-100 text-blue-700'
-                              }`}
+                              className={`px-3 py-1 rounded-full text-sm font-semibold bg-purple-50 text-purple shadow-sm`}
                             >
                               {exp.type}
                             </span>
@@ -228,8 +225,7 @@ export default function Experience() {
                         {/* Expand/Collapse Button */}
                         <motion.button
                           onClick={() => toggleCard(exp.id)}
-                          className="flex items-center gap-2 font-semibold transition-colors"
-                          whileHover={{ scale: 1.02 }}
+                          className=" btn-ghost flex items-center gap-2 font-semibold transition-all cursor-pointer"
                           whileTap={{ scale: 0.98 }}
                         >
                           {isExpanded
@@ -341,7 +337,7 @@ export default function Experience() {
                       </AnimatePresence>
 
                       {/* Card Accent */}
-                      <div className="h-2 bg-gradient-to-r from-primary-500 to-purple"></div>
+                      <div className="h-2 bg-primary-500"></div>
                     </div>
                   </motion.div>
                 );
