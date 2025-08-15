@@ -38,16 +38,26 @@
   --color-secondary-700: #990073;
   --color-secondary-800: #66004d;
   --color-secondary-900: #330026;
+
+  /* semantic colors */
+  --color-bg-primary: var(--color-neutral-50);
+  --color-bg-secondary: var(--color-neutral-100);
+  --color-text-primary: var(--color-neutral-700);
+  --color-text-secondary: var(--color-neutral-500);
+  --color-text-muted: var(--color-neutral-400);
+  --color-border: var(--color-neutral-200);
+  --color-accent: var(--color-primary-500);
+  --color-accent-secondary: var(--color-secondary-500);
 }
 
 @layer base {
   :root {
-    /* semantic color variables */
+    /* default light mode values */
+    --color-bg-primary: var(--color-neutral-50);
+    --color-bg-secondary: var(--color-neutral-100);
     --color-text-primary: var(--color-neutral-700);
     --color-text-secondary: var(--color-neutral-500);
     --color-text-muted: var(--color-neutral-400);
-    --color-bg-primary: var(--color-neutral-50);
-    --color-bg-secondary: var(--color-neutral-50);
     --color-border: var(--color-neutral-200);
     --color-accent: var(--color-primary-500);
     --color-accent-secondary: var(--color-secondary-500);
@@ -68,30 +78,30 @@
       --color-text-primary: var(--color-neutral-50);
       --color-text-secondary: var(--color-neutral-200);
       --color-text-muted: var(--color-neutral-100);
-      --color-bg-primary: var(--color-neutral-700);
-      --color-bg-secondary: var(--color-neutral-500);
-      --color-border: var(--color-neutral-400);
+      --color-bg-primary: var(--color-neutral-800);
+      --color-bg-secondary: var(--color-neutral-700);
+      --color-border: var(--color-neutral-600);
     }
   }
 
-  /* manual light mode toggle - override system preference */
+  /* manual light mode toggle */
   [data-theme='light'] {
     --color-text-primary: var(--color-neutral-700);
     --color-text-secondary: var(--color-neutral-500);
     --color-text-muted: var(--color-neutral-400);
     --color-bg-primary: var(--color-neutral-50);
-    --color-bg-secondary: var(--color-neutral-50);
+    --color-bg-secondary: var(--color-neutral-100);
     --color-border: var(--color-neutral-200);
   }
 
-  /* manual dark mode toggle - override system preference */
+  /* manual dark mode toggle */
   [data-theme='dark'] {
     --color-text-primary: var(--color-neutral-50);
     --color-text-secondary: var(--color-neutral-200);
     --color-text-muted: var(--color-neutral-100);
-    --color-bg-primary: var(--color-neutral-700);
-    --color-bg-secondary: var(--color-neutral-500);
-    --color-border: var(--color-neutral-400);
+    --color-bg-primary: var(--color-neutral-800);
+    --color-bg-secondary: var(--color-neutral-700);
+    --color-border: var(--color-neutral-600);
   }
 
   /* base element styles */
@@ -137,13 +147,11 @@
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
     @apply bg-primary-500 text-neutral-50 hover:opacity-90 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
-    @apply dark:bg-primary-600 dark:text-neutral-50 dark:hover:opacity-90 dark:focus:ring-primary-600;
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
     @apply bg-secondary-500 text-neutral-50 hover:opacity-90 focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
-    @apply dark:bg-secondary-600 dark:text-neutral-50 dark:hover:opacity-90 dark:focus:ring-secondary-600;
   }
 
   .btn-ghost {
@@ -170,14 +178,5 @@
 
   .container-custom {
     @apply container mx-auto px-6 max-w-6xl;
-  }
-
-  /* animation utilities */
-  .fade-in {
-    @apply opacity-0 translate-y-4 transition-all duration-500;
-  }
-
-  .fade-in.visible {
-    @apply opacity-100 translate-y-0;
   }
 }
