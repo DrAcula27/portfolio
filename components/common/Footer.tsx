@@ -14,7 +14,7 @@ export default function Footer() {
           href="https://linkedin.com/in/daniellerandrews"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-purple hover:scale-110 active:scale-95 transition-all"
+          className="hover:text-accent-cool hover:scale-110 active:scale-95 transition-all"
         >
           <FaLinkedin size={24} />
         </a>
@@ -22,7 +22,7 @@ export default function Footer() {
           href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-purple hover:scale-110 active:scale-95 transition-all"
+          className="hover:text-accent-cool hover:scale-110 active:scale-95 transition-all"
         >
           <FaGithub size={24} />
         </a>
@@ -30,7 +30,7 @@ export default function Footer() {
           href="https://twitter.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-purple hover:scale-110 active:scale-95 transition-all"
+          className="hover:text-accent-cool hover:scale-110 active:scale-95 transition-all"
         >
           <FaTwitter size={24} />
         </a>
