@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import ReturnToTop from '@/components/ui/ReturnToTop';
+import ThemeScript from '@/components/common/ThemeScript';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -37,7 +38,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

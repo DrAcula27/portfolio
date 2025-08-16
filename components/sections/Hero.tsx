@@ -66,7 +66,7 @@ export default function Hero() {
         >
           {/* greeting */}
           <motion.p
-            className="text-pink font-semibold text-lg mb-0"
+            className="text-secondary-500 font-semibold text-lg mb-0"
             variants={itemVariants}
           >
             Hi, my name is
@@ -75,7 +75,7 @@ export default function Hero() {
           {/* main heading */}
           <motion.div variants={itemVariants}>
             <h1>
-              <span className="text-4xl md:text-6xl lg:text-7xl font-bold underline hover:text-pink transition-all duration-100 ease-in-out">
+              <span className="text-4xl md:text-6xl lg:text-7xl font-bold underline hover:text-secondary-500 transition-all duration-100 ease-in-out">
                 Danielle Andrews
               </span>
               <span className="text-4xl md:text-6xl lg:text-7xl font-bold">
@@ -143,7 +143,7 @@ export default function Hero() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-blue hover:scale-125 transition-all duration-100 ease-in-out p-2"
+                className=" hover:text-primary-500 hover:scale-125 transition-all duration-100 ease-in-out p-2"
                 aria-label={label}
                 title={label}
               >
@@ -161,7 +161,7 @@ export default function Hero() {
             <Link href="#about">
               <PiMouseScrollLight
                 size={32}
-                className="hover:text-pink transition-colors cursor-pointer animate-bounce"
+                className="hover:text-secondary-500 transition-colors cursor-pointer animate-bounce"
               />
             </Link>
           </motion.div>
