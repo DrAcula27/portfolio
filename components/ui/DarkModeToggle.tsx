@@ -26,6 +26,19 @@ export default function DarkModeToggle() {
     }
   };
 
+  const getWording = () => {
+    switch (theme) {
+      case 'light':
+        return 'Light';
+      case 'dark':
+        return 'Dark';
+      case 'system':
+        return 'System';
+      default:
+        return 'Toggle Theme';
+    }
+  };
+
   const getLabel = () => {
     switch (theme) {
       case 'light':
@@ -42,7 +55,7 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative inline-flex items-center justify-center w-10 h-10 rounded-full cursor-pointer
+      className="relative inline-flex items-center justify-center w-25 h-10 rounded-full cursor-pointer
                  transition-all duration-200 ease-in-out
                  focus:outline-none focus:ring-2 focus:ring-accent-cool focus:ring-offset-1
                  hover:text-accent-cool"
@@ -50,8 +63,9 @@ export default function DarkModeToggle() {
       title={getLabel()}
     >
       <span className="sr-only">{getLabel()}</span>
-      <div className="transition-transform duration-200 ease-in-out">
+      <div className="flex items-center gap-2 transition-transform duration-200 ease-in-out">
         {getIcon()}
+        {getWording()}
       </div>
     </button>
   );
