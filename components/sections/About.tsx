@@ -197,29 +197,29 @@ export default function About() {
                 </h4>
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-primary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-text-primary text-sm rounded-full">
                       HTML
                     </span>
-                    <span className="px-3 py-1 bg-primary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-text-primary text-sm rounded-full">
                       CSS
                     </span>
-                    <span className="px-3 py-1 bg-primary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-text-primary text-sm rounded-full">
                       JavaScript
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-primary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-text-primary text-sm rounded-full">
                       TypeScript
                     </span>
-                    <span className="px-3 py-1 bg-primary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-text-primary text-sm rounded-full">
                       React
                     </span>
-                    <span className="px-3 py-1 bg-primary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-text-primary text-sm rounded-full">
                       Next.js
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-primary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-primary-500 text-text-primary text-sm rounded-full">
                       Tailwind CSS
                     </span>
                   </div>
@@ -249,18 +249,18 @@ export default function About() {
                 </h4>
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-accent-cool text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-accent-cool text-text-primary text-sm rounded-full">
                       Node.js
                     </span>
-                    <span className="px-3 py-1 bg-accent-cool text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-accent-cool text-text-primary text-sm rounded-full">
                       Express.js
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-accent-cool text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-accent-cool text-text-primary text-sm rounded-full">
                       MongoDB
                     </span>
-                    <span className="px-3 py-1 bg-accent-cool text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-accent-cool text-text-primary text-sm rounded-full">
                       Jest
                     </span>
                   </div>
@@ -290,15 +290,15 @@ export default function About() {
                 </h4>
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-secondary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-secondary-500 text-text-primary text-sm rounded-full">
                       AWS Lambda
                     </span>
-                    <span className="px-3 py-1 bg-secondary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-secondary-500 text-text-primary text-sm rounded-full">
                       AWS S3
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-secondary-500 text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-secondary-500 text-text-primary text-sm rounded-full">
                       AWS DynamoDB
                     </span>
                   </div>
@@ -328,10 +328,10 @@ export default function About() {
                 </h4>
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-accent-warm text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-accent-warm text-text-primary text-sm rounded-full">
                       R
                     </span>
-                    <span className="px-3 py-1 bg-accent-warm text-neutral-700 text-sm rounded-full">
+                    <span className="px-3 py-1 bg-accent-warm text-text-primary text-sm rounded-full">
                       Shiny
                     </span>
                   </div>

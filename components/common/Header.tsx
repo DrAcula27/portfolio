@@ -66,7 +66,7 @@ export default function Header() {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-neutral-600/80 backdrop-blur-md shadow-sm text-neutral-100'
+          ? 'bg-bg-secondary/80 backdrop-blur-md shadow-sm text-text-primary'
           : 'bg-transparent'
       }`}
     >
@@ -96,7 +96,7 @@ export default function Header() {
                 className={`transition-colors font-semibold ${
                   activeSection === item.href.slice(1)
                     ? 'text-secondary-500'
-                    : 'hover:text-primary-500 cursor-pointer'
+                    : 'hover:text-primary-500 cursor-pointer text-text-primary'
                 }`}
               >
                 {item.name}
@@ -106,7 +106,7 @@ export default function Header() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold hover:text-secondary-500 transition-colors border-l border-secondary-500 pl-8"
+              className="font-semibold hover:text-secondary-500 transition-colors border-l border-secondary-500 pl-8 text-text-primary"
               title="Resume opens in a new tab"
             >
               Resume
@@ -115,7 +115,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 hover:text-secondary-500 transition-colors cursor-pointer"
+            className="md:hidden p-2 hover:text-secondary-500 transition-colors cursor-pointer text-text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -128,7 +128,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 bg-neutral-500 text-neutral-100">
+          <div className="md:hidden mt-4 pb-4 bg-bg-secondary text-text-primary">
             <div className="flex flex-col space-y-4 pt-4">
               {navigation.map((item) => (
                 <button
