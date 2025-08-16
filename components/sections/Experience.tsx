@@ -3,15 +3,26 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { JSX, useState } from 'react';
 import {
+  SiReact,
+  SiSqlite,
+  SiGit,
+  SiGithub,
+  SiGithubactions,
+  SiHtml5,
+  SiCsswizardry,
+  SiNodedotjs,
+  SiTypescript,
+  SiPostgresql,
+} from 'react-icons/si';
+import {
   LuCalendar,
   LuMapPin,
   LuExternalLink,
   LuCode,
-  LuDatabase,
-  LuZap,
   LuChevronDown,
   LuChevronUp,
 } from 'react-icons/lu';
+import { FaAws } from 'react-icons/fa6';
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 import { experiences } from '@/data/experience';
 
@@ -53,15 +64,6 @@ const cardVariants = {
 };
 
 const expandVariants = {
-  // collapsed: { height: 0, opacity: 0 },
-  // expanded: {
-  //   height: 'auto',
-  //   opacity: 1,
-  //   transition: {
-  //     height: { duration: 0.3, ease: 'easeOut' },
-  //     opacity: { duration: 0.2, delay: 0.1 },
-  //   },
-  // },
   collapsed: {
     opacity: 0,
     scale: 0.95,
@@ -80,12 +82,17 @@ const expandVariants = {
 };
 
 const techIcons: Record<string, JSX.Element> = {
-  React: <LuCode className="w-4 h-4" />,
-  'Node.js': <LuDatabase className="w-4 h-4" />,
-  AWS: <LuZap className="w-4 h-4" />,
-  TypeScript: <LuCode className="w-4 h-4" />,
-  Python: <LuCode className="w-4 h-4" />,
-  'Vue.js': <LuCode className="w-4 h-4" />,
+  React: <SiReact className="w-4 h-4" />,
+  'Node.js': <SiNodedotjs className="w-4 h-4" />,
+  AWS: <FaAws className="w-4 h-4" />,
+  TypeScript: <SiTypescript className="w-4 h-4" />,
+  SQLite: <SiSqlite className="w-4 h-4" />,
+  Git: <SiGit className="w-4 h-4" />,
+  GitHub: <SiGithub className="w-4 h-4" />,
+  'GitHub Actions': <SiGithubactions className="w-4 h-4" />,
+  HTML: <SiHtml5 className="w-4 h-4" />,
+  CSS: <SiCsswizardry className="w-4 h-4" />,
+  PostgreSQL: <SiPostgresql className="w-4 h-4" />,
 };
 
 export default function Experience() {
@@ -198,11 +205,11 @@ export default function Experience() {
                         {/* Core Technologies - Always Visible */}
                         <div className="mb-6">
                           <h4 className="font-semibold mb-3">
-                            Technologies:
+                            Top 5 Technologies:
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {exp.technologies
-                              .slice(0, 6)
+                              .slice(0, 5)
                               .map((tech, i) => (
                                 <span
                                   key={i}
@@ -214,11 +221,11 @@ export default function Experience() {
                                   {tech}
                                 </span>
                               ))}
-                            {exp.technologies.length > 6 && (
+                            {/* {exp.technologies.length > 6 && (
                               <span className="px-3 py-1 rounded-full text-sm">
                                 +{exp.technologies.length - 6} more
                               </span>
-                            )}
+                            )} */}
                           </div>
                         </div>
 
@@ -272,7 +279,7 @@ export default function Experience() {
                                         key={i}
                                         className="flex items-start gap-3"
                                       >
-                                        <div className="w-2 h-2rounded-full mt-2 flex-shrink-0"></div>
+                                        <div className="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
                                         <span className="">
                                           {achievement}
                                         </span>
@@ -289,22 +296,30 @@ export default function Experience() {
                                     <h4 className="font-semibold mb-3">
                                       Key Projects:
                                     </h4>
-                                    <div className="space-y-4">
+                                    <div className="space-y-2">
                                       {exp.projects.map(
                                         (project, i) => (
                                           <div
                                             key={i}
-                                            className="rounded-lg p-4"
+                                            // className="rounded-lg p-4 bg-neutral-600 hover:outline-2 transition-all"
+                                            // className="card hover:outline-1"
+                                            className="flex items-start gap-3"
                                           >
-                                            <h5 className="font-semibold mb-2">
-                                              {project.title}
-                                            </h5>
-                                            <p className="mb-2">
-                                              {project.description}
-                                            </p>
-                                            <p className="text-sm font-medium">
-                                              Impact: {project.impact}
-                                            </p>
+                                            <div className="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
+                                            <div>
+                                              <h5 className="font-semibold mb-0">
+                                                {project.title}
+                                              </h5>
+                                              <p className="mb-2 mt-0 italic">
+                                                {project.description}
+                                              </p>
+                                              <p className="font-medium">
+                                                <span className="font-semibold">
+                                                  Impact
+                                                </span>
+                                                : {project.impact}
+                                              </p>
+                                            </div>
                                           </div>
                                         )
                                       )}
