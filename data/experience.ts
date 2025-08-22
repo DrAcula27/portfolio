@@ -46,12 +46,7 @@ export const experiences: Experience[] = [
           'Took over sole developer responsibilities after the student team’s graduation.',
         impact:
           'Enhanced application functionality and interface with accessibility-focused improvements to meet WCAG compliance and usability goals. Collaborated with NOAA scientists and federal partners to integrate additional peer-reviewed literature, ensuring the eLibrary remains a comprehensive resource for stressor-response data.',
-        technologies: [
-          'R',
-          'Shiny',
-          'SQLite',
-          'Git/GitHub/GHActions',
-        ],
+        technologies: ['R', 'Shiny', 'SQLite', 'GitHub'],
         featured: false,
       },
       {
@@ -62,12 +57,7 @@ export const experiences: Experience[] = [
           'Fixed critical bugs and made essential application improvements.',
         impact:
           'Resolved a critical admin panel bug by fixing table reference mismatches, eliminating 100% of related server disconnect errors during QA testing. Implemented formal acknowledgments for the student team and sponsoring professor to maintain transparent authorship and project history.',
-        technologies: [
-          'R',
-          'Shiny',
-          'SQLite',
-          'Git/GitHub/GHActions',
-        ],
+        technologies: ['R', 'Shiny', 'SQLite', 'GitHub'],
         featured: false,
       },
     ],
@@ -82,47 +72,73 @@ export const experiences: Experience[] = [
     // endDate: new Date('today'),
     type: 'Contract',
     summary:
-      'Lead development of scalable web applications using React, Node.js, and AWS. Mentored junior developers and architected microservices.',
+      'Architected and developed a comprehensive database and web application to manage and visualize salmon habitat restoration projects. Collaborated with biologists and stakeholders to ensure data accuracy and usability, resulting in improved project tracking and reporting capabilities.',
     fullDescription:
-      'Lead development of scalable web applications using React, Node.js, and AWS. Mentored junior developers and architected microservices handling 1M+ daily users. Collaborated with product and design teams to deliver high-impact features while maintaining code quality and performance standards.',
+      'Architected and developed a comprehensive database and web application to manage and visualize salmon habitat restoration projects. Collaborated closely with biologists and stakeholders to gather requirements, ensuring the system met their needs for data accuracy, usability, and reporting. Implemented features for project tracking, data visualization, and reporting, significantly enhancing the organization’s ability to monitor restoration efforts and communicate progress to funders and the public.',
     achievements: [
-      'Reduced page load times by 40% through code optimization and lazy loading implementation',
-      'Led migration to TypeScript across 15+ repositories, improving code maintainability',
-      'Implemented CI/CD pipelines reducing deployment time by 60% and eliminating manual errors',
-      'Mentored 5 junior developers, with 3 receiving promotions during tenure',
+      'Cleaned and organized 10+ years of restoration project data, improving data integrity and accessibility for biologists and stakeholders.',
+      'Designed data schema for migrating data into MongoDB Atlas, ensuring scalability and performance for future growth.',
+      // 'Developed a user-friendly web application using React and Node.js, enabling easy access to project data and visualizations for non-technical users.', //* maybe use Angular or Vue instead of React?
+      "Integrated interactive charts into the organization's existing WordPress site using MongoDB Charts, enhancing data visualization and stakeholder engagement.",
+      'Provided training and documentation to staff, ensuring smooth adoption and ease of importing of data into the system.',
     ],
     technologies: [
-      'React',
-      'TypeScript',
+      'MongoDB',
+      'MongoDB Atlas',
+      'MongoDB Charts',
+      'WordPress',
+      'Google Sheets',
+      'Google Meet',
       'Node.js',
-      'AWS',
-      'PostgreSQL',
-      'Docker',
-      'Kubernetes',
-      'Redis',
+      'Express',
     ],
     projects: [
       {
         id: '1',
-        title: 'Customer Portal Redesign',
+        title: 'Data Cleanup & Migration',
         description:
-          'Led complete overhaul of customer-facing portal serving 100K+ users',
+          'Cleaned and organized 10+ years of restoration project data for migration into MongoDB Atlas.',
         impact:
-          'Increased user engagement by 35% and reduced support tickets by 28%',
-        technologies: ['React', 'Node.js', 'GraphQL', 'AWS Amplify'],
+          'Improved data integrity and accessibility for biologists and stakeholders. Designed a scalable data schema to accommodate future growth and ensure optimal performance.',
+        technologies: ['Google Sheets', 'MongoDB', 'MongoDB Atlas'],
         featured: false,
       },
       {
         id: '2',
-        title: 'Microservices Migration',
+        title: 'WordPress Integration',
         description:
-          'Architected migration from monolith to microservices architecture',
+          "Integrated interactive charts into the organization's existing WordPress site using MongoDB Charts.",
         impact:
-          'Improved deployment frequency from weekly to daily releases',
-        technologies: ['Node.js', 'Docker', 'Kubernetes', 'AWS ECS'],
+          'Enhanced data visualization and stakeholder engagement by providing easy access to project data and visualizations directly on the website.',
+        technologies: ['WordPress', 'MongoDB Charts'],
+        featured: false,
+      },
+      {
+        id: '3',
+        title: 'Microservice Development',
+        description:
+          'Built a Node.js/Express microservice that generates embeddable iframes for data visualizations, enabling seamless integration of interactive analytics dashboards into WordPress without plugin dependencies or performance overhead.',
+        impact:
+          'Streamlined data access and improved user experience, allowing staff and stakeholders to efficiently interact with project information.',
+        technologies: [
+          'Node.js',
+          'Express',
+          'MongoDB Atlas',
+          'WordPress',
+        ],
+        featured: false,
+      },
+      {
+        id: '4',
+        title: 'Staff Training & Documentation',
+        description:
+          'Provided training and documentation to staff on using the new database and web application.',
+        impact:
+          'Ensured smooth adoption of the system and ease of importing data, empowering staff to effectively manage and utilize the new tools.',
+        technologies: ['Google Docs', 'Google Meet'],
         featured: false,
       },
     ],
-    link: 'https://techcorp.com',
+    link: 'https://www.pnwsalmoncenter.org',
   },
 ];
