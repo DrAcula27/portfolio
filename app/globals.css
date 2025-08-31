@@ -2,65 +2,66 @@
 
 @theme {
   /* custom colors  */
-  --color-accent-cool: #9d7cff;
-  --color-accent-warm: #ff8b5a;
+  --color-accent-dark: #a24ccd;
+  --color-accent-light: #d099e3;
 
   /* custom color scales */
-  --color-neutral-50: #f9f9f9;
-  --color-neutral-100: #e6e6e6;
-  --color-neutral-200: #d1d1d1;
-  --color-neutral-300: #999999;
-  --color-neutral-400: #777777;
-  --color-neutral-500: #555555;
-  --color-neutral-600: #444444;
-  --color-neutral-700: #333333;
-  --color-neutral-800: #222222;
-  --color-neutral-900: #111111;
+  --color-neutral-50: #f8f9fa;
+  --color-neutral-100: #e9ecef;
+  --color-neutral-200: #dee2e6;
+  --color-neutral-300: #ced4da;
+  --color-neutral-400: #adb5bd;
+  --color-neutral-500: #6c757d;
+  --color-neutral-600: #495057;
+  --color-neutral-700: #343a40;
+  --color-neutral-800: #212529;
+  --color-neutral-900: #070605;
 
-  --color-primary-50: #e6f9ff;
-  --color-primary-100: #b3ecff;
-  --color-primary-200: #80dfff;
-  --color-primary-300: #4dd2ff;
-  --color-primary-400: #1ac5ff;
-  --color-primary-500: #57cbff;
-  --color-primary-600: #0099cc;
-  --color-primary-700: #007399;
-  --color-primary-800: #004d66;
-  --color-primary-900: #002633;
+  --color-primary-50: #e8f3fe;
+  --color-primary-100: #cce4fd;
+  --color-primary-200: #a4cefc;
+  --color-primary-300: #77b6fb;
+  --color-primary-400: #4b9cf9;
+  --color-primary-500: #2382f7;
+  --color-primary-600: #196bde;
+  --color-primary-700: #1557c0;
+  --color-primary-800: #13459c;
+  --color-primary-900: #0f3375;
 
-  --color-secondary-50: #ffe6f5;
-  --color-secondary-100: #ffb3e6;
-  --color-secondary-200: #ff80d6;
-  --color-secondary-300: #ff4dc7;
-  --color-secondary-400: #ff1ab8;
-  --color-secondary-500: #ff7cc8;
-  --color-secondary-600: #cc0099;
-  --color-secondary-700: #990073;
-  --color-secondary-800: #66004d;
-  --color-secondary-900: #330026;
-
-  /* semantic colors */
-  --color-bg-primary: var(--color-neutral-50);
-  --color-bg-secondary: var(--color-neutral-100);
-  --color-text-primary: var(--color-neutral-700);
-  --color-text-secondary: var(--color-neutral-500);
-  --color-text-muted: var(--color-neutral-400);
-  --color-border: var(--color-neutral-200);
-  --color-accent: var(--color-primary-500);
-  --color-accent-secondary: var(--color-secondary-500);
+  --color-secondary-50: #ffd0e5;
+  --color-secondary-100: #ffb9d8;
+  --color-secondary-200: #ffa2cb;
+  --color-secondary-300: #ff8bbf;
+  --color-secondary-400: #ff74b2;
+  --color-secondary-500: #ff5ca5;
+  --color-secondary-600: #ff4598;
+  --color-secondary-700: #ff2e8c;
+  --color-secondary-800: #ff177f;
+  --color-secondary-900: #ff0072;
 }
 
 @layer base {
   :root {
-    /* default light mode values */
-    --color-bg-primary: var(--color-neutral-50);
-    --color-bg-secondary: var(--color-neutral-100);
-    --color-text-primary: var(--color-neutral-700);
-    --color-text-secondary: var(--color-neutral-500);
-    --color-text-muted: var(--color-neutral-400);
-    --color-border: var(--color-neutral-200);
-    --color-accent: var(--color-primary-500);
-    --color-accent-secondary: var(--color-secondary-500);
+    --background: var(--color-neutral-50);
+    --foreground: var(--color-neutral-800);
+    --muted: var(--color-neutral-300);
+    --muted-foreground: var(--color-neutral-700);
+    --popover: var(--color-neutral-100);
+    --popover-foreground: var(--color-neutral-600);
+    --card: var(--color-neutral-100);
+    --card-foreground: var(--color-neutral-600);
+    --border: var(--color-neutral-500);
+    --input: var(--color-neutral-500);
+    --primary: var(--color-primary-400);
+    --primary-foreground: var(--color-neutral-50);
+    --secondary: var(--color-secondary-500);
+    --secondary-foreground: var(--color-neutral-50);
+    --accent: var(--color-accent-light);
+    --accent-foreground: var(--color-neutral-500);
+    --destructive: var(--color-secondary-900);
+    --destructive-foreground: var(--color-secondary-50);
+    --ring: var(--color-primary-400);
+    --radius: 0.5rem;
 
     /* shadows */
     --shadow-sm: 0 1px 2px 0 rgba(51, 51, 51, 0.05);
@@ -73,35 +74,87 @@
     --font-mono: var(--font-geist-mono);
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-text-primary: var(--color-neutral-50);
-      --color-text-secondary: var(--color-neutral-200);
-      --color-text-muted: var(--color-neutral-100);
-      --color-bg-primary: var(--color-neutral-800);
-      --color-bg-secondary: var(--color-neutral-700);
-      --color-border: var(--color-neutral-600);
-    }
-  }
-
-  /* manual light mode toggle */
-  [data-theme='light'] {
-    --color-text-primary: var(--color-neutral-700);
-    --color-text-secondary: var(--color-neutral-500);
-    --color-text-muted: var(--color-neutral-400);
-    --color-bg-primary: var(--color-neutral-50);
-    --color-bg-secondary: var(--color-neutral-100);
-    --color-border: var(--color-neutral-200);
-  }
-
-  /* manual dark mode toggle */
+  /* dark mode when explicitly set */
   [data-theme='dark'] {
-    --color-text-primary: var(--color-neutral-50);
-    --color-text-secondary: var(--color-neutral-200);
-    --color-text-muted: var(--color-neutral-100);
-    --color-bg-primary: var(--color-neutral-800);
-    --color-bg-secondary: var(--color-neutral-700);
-    --color-border: var(--color-neutral-600);
+    --background: var(--color-neutral-800);
+    --foreground: var(--color-neutral-50);
+    --muted: var(--color-neutral-700);
+    --muted-foreground: var(--color-neutral-400);
+    --popover: var(--color-neutral-700);
+    --popover-foreground: var(--color-neutral-50);
+    --card: var(--color-neutral-800);
+    --card-foreground: var(--color-neutral-50);
+    --border: var(--color-neutral-500);
+    --input: var(--color-neutral-500);
+    --primary: var(--color-primary-400);
+    --primary-foreground: var(--color-neutral-900);
+    --secondary: var(--color-secondary-500);
+    --secondary-foreground: var(--color-neutral-900);
+    --accent: var(--color-accent-dark);
+    --accent-foreground: var(--color-neutral-50);
+    --destructive: var(--color-secondary-900);
+    --destructive-foreground: var(--color-neutral-50);
+    --ring: var(--color-primary-400);
+
+    /* darker shadows for dark mode */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Light mode when explicitly set */
+  [data-theme='light'] {
+    --background: var(--color-neutral-50);
+    --foreground: var(--color-neutral-800);
+    --muted: var(--color-neutral-300);
+    --muted-foreground: var(--color-neutral-700);
+    --popover: var(--color-neutral-100);
+    --popover-foreground: var(--color-neutral-600);
+    --card: var(--color-neutral-100);
+    --card-foreground: var(--color-neutral-600);
+    --border: var(--color-neutral-500);
+    --input: var(--color-neutral-500);
+    --primary: var(--color-primary-400);
+    --primary-foreground: var(--color-neutral-50);
+    --secondary: var(--color-secondary-500);
+    --secondary-foreground: var(--color-neutral-50);
+    --accent: var(--color-accent-light);
+    --accent-foreground: var(--color-neutral-500);
+    --destructive: var(--color-secondary-900);
+    --destructive-foreground: var(--color-secondary-50);
+    --ring: var(--color-primary-400);
+  }
+
+  /* System preference dark mode (only when no explicit theme is set) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --background: var(--color-neutral-800);
+      --foreground: var(--color-neutral-50);
+      --muted: var(--color-neutral-700);
+      --muted-foreground: var(--color-neutral-400);
+      --popover: var(--color-neutral-700);
+      --popover-foreground: var(--color-neutral-50);
+      --card: var(--color-neutral-800);
+      --card-foreground: var(--color-neutral-50);
+      --border: var(--color-neutral-500);
+      --input: var(--color-neutral-500);
+      --primary: var(--color-primary-400);
+      --primary-foreground: var(--color-neutral-900);
+      --secondary: var(--color-secondary-500);
+      --secondary-foreground: var(--color-neutral-900);
+      --accent: var(--color-accent-dark);
+      --accent-foreground: var(--color-neutral-50);
+      --destructive: var(--color-secondary-900);
+      --destructive-foreground: var(--color-neutral-50);
+      --ring: var(--color-primary-400);
+
+      /* darker shadows for dark mode */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    }
   }
 
   /* base element styles */
@@ -110,10 +163,11 @@
   }
 
   body {
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: var(--font-mono), system-ui, -apple-system,
-      sans-serif;
+      BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+      Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -129,38 +183,96 @@
   h6 {
     font-weight: 600;
     line-height: 1.2;
+    color: var(--foreground);
   }
 
   p {
     margin-bottom: 1rem;
+    color: var(--foreground);
+  }
+
+  a {
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
   }
 
   /* focus styles for accessibility */
   *:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
+    outline: 1px solid var(--ring);
+    outline-offset: 1px;
   }
 }
 
 @layer components {
-  /* button components */
+  /* button */
+  .btn {
+    @apply cursor-pointer;
+    @apply inline-flex items-center justify-center px-6 py-3;
+    @apply text-base font-medium;
+    @apply rounded-lg;
+    @apply transition-all duration-300;
+  }
+
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
-    @apply bg-primary-500 text-neutral-50 hover:opacity-90 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: var(--shadow-sm);
+    font-weight: 600;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:focus {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
-    @apply bg-secondary-500 text-neutral-50 hover:opacity-90 focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-secondary:hover {
+    opacity: 0.9;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-secondary:focus {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-4 py-2 text-base font-medium rounded-lg transition-all duration-300;
-    @apply text-neutral-700 hover:text-primary-500 hover:bg-neutral-50 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
-    transition-property: color, background-color;
+    color: var(--foreground);
+    background-color: transparent;
   }
 
-  /* card component */
+  .btn-ghost:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  .btn-ghost:focus {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  .btn-home {
+    @apply w-fit;
+  }
+
+  /* card */
   .card {
     @apply bg-neutral-50 rounded-xl shadow-md border border-neutral-200 p-6 transition-all duration-300;
     @apply hover:shadow-lg focus-within:shadow-lg;
@@ -168,7 +280,7 @@
 
   /* text utilities */
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-400 to-secondary-500 bg-clip-text text-transparent;
   }
 
   /* layout utilities */

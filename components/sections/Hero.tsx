@@ -111,23 +111,23 @@ export default function Hero() {
           >
             <Link
               href="#experience"
-              className="group btn-primary flex items-center gap-2 hover:scale-105 transition-transform duration-100 ease-in-out active:scale-95"
+              className="group btn btn-primary flex items-center gap-2 hover:scale-105 ease-in-out active:scale-95"
             >
               View My Work
               <FaArrowDown
                 size={18}
-                className="group-hover:translate-y-1 transition-transform duration-100 ease-in-out"
+                className="group-hover:translate-y-1 transition-transform duration-300 ease-in-out"
               />
             </Link>
 
             <Link
               href="#contact"
-              className="group btn-primary flex items-center gap-2 hover:scale-105 transition-transform duration-100 ease-in-out active:scale-95"
+              className="group btn btn-primary flex items-center gap-2 hover:scale-105 ease-in-out active:scale-95"
             >
               Get In Touch
               <FaArrowDown
                 size={18}
-                className="group-hover:translate-y-1 transition-transform duration-100 ease-in-out"
+                className="group-hover:translate-y-1 transition-transform duration-300 ease-in-out"
               />
             </Link>
           </motion.div>
@@ -143,7 +143,7 @@ export default function Hero() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-primary-500 hover:scale-125 transition-all duration-100 ease-in-out p-2"
+                className=" hover:text-primary-400 hover:scale-125 transition-all duration-100 ease-in-out p-2"
                 aria-label={label}
                 title={label}
               >

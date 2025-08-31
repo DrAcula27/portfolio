@@ -20,12 +20,12 @@ export default function Archive() {
       <div className="container mx-auto max-w-4xl">
         <div className="text-center">
           <h2 className="text-4xl font-bold mb-4">Archive</h2>
-          <p className="text-lg text-primary mb-8">
+          <p className="text-lg text-text-primary mb-8">
             This is an archive of older projects and works that I have
             created. Some of these may not be actively maintained, but
             they represent my journey and growth as a developer.
           </p>
-          <Link href="/" className="btn-primary">
+          <Link href="/" className="btn btn-primary">
             Return to Home
           </Link>
         </div>
