@@ -148,7 +148,7 @@ export default function Experience() {
                     variants={cardVariants}
                   >
                     {/* Timeline arrow */}
-                    <MdKeyboardDoubleArrowRight className="absolute left-4 top-8 w-8 h-8 text-orange bg-orange-50 rounded-full shadow-lg hidden md:block" />
+                    <MdKeyboardDoubleArrowRight className="absolute left-4 top-8 w-8 h-8 text-accent-light bg-neutral-50 rounded-full shadow-lg hidden md:block" />
 
                     {/* Experience Card */}
                     <div className="md:ml-20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
@@ -190,7 +190,7 @@ export default function Experience() {
                           </div>
                           <div className="flex-shrink-0">
                             <span
-                              className={`px-3 py-1 rounded-full text-sm font-semibold bg-purple-50 text-purple shadow-sm`}
+                              className={`px-3 py-1 rounded-full text-sm font-semibold bg-neutral-50 text-accent-dark shadow-sm`}
                             >
                               {exp.type}
                             </span>
@@ -232,7 +232,7 @@ export default function Experience() {
                         {/* Expand/Collapse Button */}
                         <motion.button
                           onClick={() => toggleCard(exp.id)}
-                          className=" btn-ghost flex items-center gap-2 font-semibold transition-all cursor-pointer"
+                          className="btn btn-ghost flex items-center gap-2 font-semibold transition-all cursor-pointer"
                           whileTap={{ scale: 0.98 }}
                         >
                           {isExpanded
@@ -374,7 +374,7 @@ export default function Experience() {
                 interesting projects.
               </p>
               <motion.button
-                className="btn-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+                className="btn btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

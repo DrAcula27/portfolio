@@ -25,7 +25,7 @@ export default function Archive() {
             created. Some of these may not be actively maintained, but
             they represent my journey and growth as a developer.
           </p>
-          <Link href="/" className="btn-primary">
+          <Link href="/" className="btn btn-primary">
             Return to Home
           </Link>
         </div>
