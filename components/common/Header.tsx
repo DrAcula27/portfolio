@@ -96,7 +96,7 @@ export default function Header() {
                 className={`transition-colors font-semibold ${
                   activeSection === item.href.slice(1)
                     ? 'text-secondary-500'
-                    : 'hover:text-primary-500 cursor-pointer text-text-primary'
+                    : 'hover:text-primary-400 cursor-pointer text-text-primary'
                 }`}
               >
                 {item.name}
@@ -137,7 +137,7 @@ export default function Header() {
                   className={`text-center border py-4 transition-colors ${
                     activeSection === item.href.slice(1)
                       ? 'text-secondary-500'
-                      : 'hover:text-primary-500 cursor-pointer'
+                      : 'hover:text-primary-400 cursor-pointer'
                   }`}
                 >
                   {item.name}

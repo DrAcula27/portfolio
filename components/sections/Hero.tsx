@@ -143,7 +143,7 @@ export default function Hero() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-primary-500 hover:scale-125 transition-all duration-100 ease-in-out p-2"
+                className=" hover:text-primary-400 hover:scale-125 transition-all duration-100 ease-in-out p-2"
                 aria-label={label}
                 title={label}
               >

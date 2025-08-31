@@ -164,7 +164,7 @@ const GitHubStatsWidget = ({
 
   return (
     <motion.div
-      className="bg-gradient-to-b from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-lg p-4 mt-6 border border-secondary-200 dark:border-secondary-900"
+      className="bg-gradient-to-b from-primary-900/20 to-secondary-900/20 rounded-lg p-4 mt-6 border border-accent-dark"
       variants={statsVariants}
       initial="hidden"
       animate="visible"
@@ -174,7 +174,7 @@ const GitHubStatsWidget = ({
         {stats.commits > 0 && (
           <>
             pushed{' '}
-            <span className="font-semibold text-secondary-200 dark:text-secondary-300">
+            <span className="font-semibold text-secondary-200 dark:text-secondary-600">
               {stats.commits} commits
             </span>
             {(stats.prs > 0 ||
@@ -188,7 +188,7 @@ const GitHubStatsWidget = ({
         {stats.prs > 0 && (
           <>
             opened{' '}
-            <span className="font-semibold text-secondary-200 dark:text-secondary-300">
+            <span className="font-semibold text-secondary-200 dark:text-secondary-600">
               {stats.prs} PRs
             </span>
             {(stats.mergedPrs > 0 ||
@@ -201,7 +201,7 @@ const GitHubStatsWidget = ({
         {stats.mergedPrs > 0 && (
           <>
             merged{' '}
-            <span className="font-semibold text-secondary-200 dark:text-secondary-300">
+            <span className="font-semibold text-secondary-200 dark:text-secondary-600">
               {stats.mergedPrs} PRs
             </span>
             {(stats.reviewedPrs > 0 ||
@@ -213,7 +213,7 @@ const GitHubStatsWidget = ({
         {stats.reviewedPrs > 0 && (
           <>
             reviewed{' '}
-            <span className="font-semibold text-secondary-200 dark:text-secondary-300">
+            <span className="font-semibold text-secondary-200 dark:text-secondary-600">
               {stats.reviewedPrs} PRs
             </span>
             {(stats.comments > 0 || stats.branches > 0) && ', '}
@@ -222,7 +222,7 @@ const GitHubStatsWidget = ({
         {stats.comments > 0 && (
           <>
             made{' '}
-            <span className="font-semibold text-secondary-200 dark:text-secondary-300">
+            <span className="font-semibold text-secondary-200 dark:text-secondary-600">
               {stats.comments} comments
             </span>
             {stats.branches > 0 && ', '}
@@ -231,7 +231,7 @@ const GitHubStatsWidget = ({
         {stats.branches > 0 && (
           <>
             and created{' '}
-            <span className="font-semibold text-secondary-200 dark:text-secondary-300">
+            <span className="font-semibold text-secondary-200 dark:text-secondary-600">
               {stats.branches} branches
             </span>
           </>

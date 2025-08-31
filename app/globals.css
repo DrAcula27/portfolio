@@ -2,65 +2,65 @@
 
 @theme {
   /* custom colors  */
-  --color-accent-dark: #9d7cff;
-  --color-accent-light: #ff8b5a;
+  --color-accent-dark: #a24ccd;
+  --color-accent-light: #d099e3;
 
   /* custom color scales */
-  --color-neutral-50: #f9f9f9;
-  --color-neutral-100: #e6e6e6;
-  --color-neutral-200: #d1d1d1;
-  --color-neutral-300: #999999;
-  --color-neutral-400: #777777;
-  --color-neutral-500: #555555;
-  --color-neutral-600: #444444;
-  --color-neutral-700: #333333;
-  --color-neutral-800: #222222;
-  --color-neutral-900: #111111;
+  --color-neutral-50: #f8f9fa;
+  --color-neutral-100: #e9ecef;
+  --color-neutral-200: #dee2e6;
+  --color-neutral-300: #ced4da;
+  --color-neutral-400: #adb5bd;
+  --color-neutral-500: #6c757d;
+  --color-neutral-600: #495057;
+  --color-neutral-700: #343a40;
+  --color-neutral-800: #212529;
+  --color-neutral-900: #070605;
 
-  --color-primary-50: #e6f9ff;
-  --color-primary-100: #b3ecff;
-  --color-primary-200: #80dfff;
-  --color-primary-300: #4dd2ff;
-  --color-primary-400: #1ac5ff;
-  --color-primary-500: #57cbff;
-  --color-primary-600: #0099cc;
-  --color-primary-700: #007399;
-  --color-primary-800: #004d66;
-  --color-primary-900: #002633;
+  --color-primary-50: #e8f3fe;
+  --color-primary-100: #cce4fd;
+  --color-primary-200: #a4cefc;
+  --color-primary-300: #77b6fb;
+  --color-primary-400: #4b9cf9;
+  --color-primary-500: #2382f7;
+  --color-primary-600: #196bde;
+  --color-primary-700: #1557c0;
+  --color-primary-800: #13459c;
+  --color-primary-900: #0f3375;
 
-  --color-secondary-50: #ffe6f5;
-  --color-secondary-100: #ffb3e6;
-  --color-secondary-200: #ff80d6;
-  --color-secondary-300: #ff4dc7;
-  --color-secondary-400: #ff1ab8;
-  --color-secondary-500: #ff7cc8;
-  --color-secondary-600: #cc0099;
-  --color-secondary-700: #990073;
-  --color-secondary-800: #66004d;
-  --color-secondary-900: #330026;
+  --color-secondary-50: #ffd0e5;
+  --color-secondary-100: #ffb9d8;
+  --color-secondary-200: #ffa2cb;
+  --color-secondary-300: #ff8bbf;
+  --color-secondary-400: #ff74b2;
+  --color-secondary-500: #ff5ca5;
+  --color-secondary-600: #ff4598;
+  --color-secondary-700: #ff2e8c;
+  --color-secondary-800: #ff177f;
+  --color-secondary-900: #ff0072;
 }
 
 @layer base {
   :root {
-    --background: #fefefe;
-    --foreground: #343434;
-    --muted: #cccccc;
-    --muted-foreground: #777777;
-    --popover: #fefefe;
-    --popover-foreground: #333333;
-    --card: #fefefe;
-    --card-foreground: #333333;
-    --border: #d1d1d1;
-    --input: #d1d1d1;
-    --primary: #57cbff;
-    --primary-foreground: #fefefe;
-    --secondary: #ff7cc8;
-    --secondary-foreground: #fefefe;
+    --background: var(--color-neutral-50);
+    --foreground: var(--color-neutral-800);
+    --muted: var(--color-neutral-300);
+    --muted-foreground: var(--color-neutral-700);
+    --popover: var(--color-neutral-100);
+    --popover-foreground: var(--color-neutral-600);
+    --card: var(--color-neutral-100);
+    --card-foreground: var(--color-neutral-600);
+    --border: var(--color-neutral-500);
+    --input: var(--color-neutral-500);
+    --primary: var(--color-primary-400);
+    --primary-foreground: var(--color-neutral-50);
+    --secondary: var(--color-secondary-500);
+    --secondary-foreground: var(--color-neutral-50);
     --accent: var(--color-accent-light);
-    --accent-foreground: #333333;
-    --destructive: #ef4444;
-    --destructive-foreground: #fefefe;
-    --ring: #57cbff;
+    --accent-foreground: var(--color-neutral-500);
+    --destructive: var(--color-secondary-900);
+    --destructive-foreground: var(--color-secondary-50);
+    --ring: var(--color-primary-400);
     --radius: 0.5rem;
 
     /* shadows */
@@ -76,25 +76,25 @@
 
   /* dark mode when explicitly set */
   [data-theme='dark'] {
-    --background: #1a1a1a;
-    --foreground: #f9f9f9;
-    --muted: #2a2a2a;
-    --muted-foreground: #d1d1d1;
-    --popover: #333333;
-    --popover-foreground: #f9f9f9;
-    --card: #2a2a2a;
-    --card-foreground: #f9f9f9;
-    --border: #555555;
-    --input: #555555;
-    --primary: #57cbff;
-    --primary-foreground: #1a1a1a;
-    --secondary: #ff7cc8;
-    --secondary-foreground: #1a1a1a;
+    --background: var(--color-neutral-800);
+    --foreground: var(--color-neutral-50);
+    --muted: var(--color-neutral-700);
+    --muted-foreground: var(--color-neutral-400);
+    --popover: var(--color-neutral-700);
+    --popover-foreground: var(--color-neutral-50);
+    --card: var(--color-neutral-800);
+    --card-foreground: var(--color-neutral-50);
+    --border: var(--color-neutral-500);
+    --input: var(--color-neutral-500);
+    --primary: var(--color-primary-400);
+    --primary-foreground: var(--color-neutral-900);
+    --secondary: var(--color-secondary-500);
+    --secondary-foreground: var(--color-neutral-900);
     --accent: var(--color-accent-dark);
-    --accent-foreground: #f9f9f9;
-    --destructive: #ef4444;
-    --destructive-foreground: #f9f9f9;
-    --ring: #57cbff;
+    --accent-foreground: var(--color-neutral-50);
+    --destructive: var(--color-secondary-900);
+    --destructive-foreground: var(--color-neutral-50);
+    --ring: var(--color-primary-400);
 
     /* darker shadows for dark mode */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -105,49 +105,49 @@
 
   /* Light mode when explicitly set */
   [data-theme='light'] {
-    --background: #fefefe;
-    --foreground: #333333;
-    --muted: #f9f9f9;
-    --muted-foreground: #777777;
-    --popover: #fefefe;
-    --popover-foreground: #333333;
-    --card: #fefefe;
-    --card-foreground: #333333;
-    --border: #d1d1d1;
-    --input: #d1d1d1;
-    --primary: #57cbff;
-    --primary-foreground: #fefefe;
-    --secondary: #ff7cc8;
-    --secondary-foreground: #fefefe;
+    --background: var(--color-neutral-50);
+    --foreground: var(--color-neutral-800);
+    --muted: var(--color-neutral-300);
+    --muted-foreground: var(--color-neutral-700);
+    --popover: var(--color-neutral-100);
+    --popover-foreground: var(--color-neutral-600);
+    --card: var(--color-neutral-100);
+    --card-foreground: var(--color-neutral-600);
+    --border: var(--color-neutral-500);
+    --input: var(--color-neutral-500);
+    --primary: var(--color-primary-400);
+    --primary-foreground: var(--color-neutral-50);
+    --secondary: var(--color-secondary-500);
+    --secondary-foreground: var(--color-neutral-50);
     --accent: var(--color-accent-light);
-    --accent-foreground: #333333;
-    --destructive: #ef4444;
-    --destructive-foreground: #fefefe;
-    --ring: #57cbff;
+    --accent-foreground: var(--color-neutral-500);
+    --destructive: var(--color-secondary-900);
+    --destructive-foreground: var(--color-secondary-50);
+    --ring: var(--color-primary-400);
   }
 
   /* System preference dark mode (only when no explicit theme is set) */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-      --background: #1a1a1a;
-      --foreground: #f9f9f9;
-      --muted: #2a2a2a;
-      --muted-foreground: #d1d1d1;
-      --popover: #333333;
-      --popover-foreground: #f9f9f9;
-      --card: #2a2a2a;
-      --card-foreground: #f9f9f9;
-      --border: #555555;
-      --input: #555555;
-      --primary: #57cbff;
-      --primary-foreground: #1a1a1a;
-      --secondary: #ff7cc8;
-      --secondary-foreground: #1a1a1a;
+      --background: var(--color-neutral-800);
+      --foreground: var(--color-neutral-50);
+      --muted: var(--color-neutral-700);
+      --muted-foreground: var(--color-neutral-400);
+      --popover: var(--color-neutral-700);
+      --popover-foreground: var(--color-neutral-50);
+      --card: var(--color-neutral-800);
+      --card-foreground: var(--color-neutral-50);
+      --border: var(--color-neutral-500);
+      --input: var(--color-neutral-500);
+      --primary: var(--color-primary-400);
+      --primary-foreground: var(--color-neutral-900);
+      --secondary: var(--color-secondary-500);
+      --secondary-foreground: var(--color-neutral-900);
       --accent: var(--color-accent-dark);
-      --accent-foreground: #f9f9f9;
-      --destructive: #ef4444;
-      --destructive-foreground: #f9f9f9;
-      --ring: #57cbff;
+      --accent-foreground: var(--color-neutral-50);
+      --destructive: var(--color-secondary-900);
+      --destructive-foreground: var(--color-neutral-50);
+      --ring: var(--color-primary-400);
 
       /* darker shadows for dark mode */
       --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -280,7 +280,7 @@
 
   /* text utilities */
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-400 to-secondary-500 bg-clip-text text-transparent;
   }
 
   /* layout utilities */

@@ -166,7 +166,7 @@ export default function Experience() {
                               {exp.link && (
                                 <a
                                   href={exp.link}
-                                  className="text-primary-500 hover:text-primary-700 transition-colors"
+                                  className="text-primary-400 hover:text-primary-700 transition-colors"
                                   target="_blank"
                                   rel="noopener noreferrer"
                                 >
@@ -352,7 +352,7 @@ export default function Experience() {
                       </AnimatePresence>
 
                       {/* Card Accent */}
-                      <div className="h-2 bg-primary-500"></div>
+                      <div className="h-2 bg-primary-400"></div>
                     </div>
                   </motion.div>
                 );
