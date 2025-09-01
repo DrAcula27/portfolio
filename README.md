@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Danielle Andrews Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 14 and the App Router, showcasing my projects, skills, and professional experience.
 
-First, run the development server:
+## 🌟 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Modern Design**: Clean, responsive interface optimized for all devices
+- **Performance Optimized**: Built with Next.js App Router for fast loading and SEO
+- **Interactive Elements**: Smooth animations and engaging user experience
+- **Project Showcase**: Detailed case studies with live demos and source code links
+- **Contact Integration**: Direct contact form and social media links
+- **Accessibility**: WCAG compliant with keyboard navigation support
+
+<!-- ## 🚀 Live Demo
+
+[View Live Site](https://danielle-andrews.devdecks.com) -->
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS / CSS Modules / Styled Components
+- **Animations**: Framer Motion / CSS Animations
+- **Typography**: Geist Font Family
+- **Deployment**: Vercel
+<!-- - **Contact Form**: [contact solution - e.g., EmailJS, Formspree, etc.] -->
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── archive/         # Archived projects page
+│   ├── page_not_found/  # Custom 404 page
+│   ├── favicon.ico      # Custom favicon
+│   ├── globals.css      # Global styles
+│   ├── layout.tsx       # Root layout
+│   └── page.tsx         # Homepage
+├── components/          # Reusable UI components
+│   ├── common/          # Common components (Header, Footer, Loader, etc.)
+│   ├── sections/        # Page sections (About, Contact, Experience, Hero, Projects)
+│   ├── ui/              # UI components (Button, Card, Navigation, etc.)
+├── data/                # Static data files
+│   ├── experience.ts    # Work experience data
+│   ├── projects.ts      # Project information
+│   └── skills.ts        # Skills and technologies
+├── hooks/               # Custom React hooks
+│   └── useDarkMode.ts   # Dark mode functionality
+├── lib/                 # Utility libraries
+│   ├── constants.ts     # App constants
+│   ├── types.ts         # TypeScript type definitions
+│   └── utils.ts         # Helper functions
+├── public/              # Static assets
+│   ├── logo_self.png    # Personal logo
+│   ├── logo.png         # Site logo
+│   └── resume.pdf       # Downloadable resume
+└── Configuration files  (Next.js, TypeScript, Tailwind, etc.)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏃‍♂️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/DrAcula27/portfolio.git
+   cd portfolio
+   ```
 
-## Learn More
+2. **Install dependencies**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run the development server**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-## Deploy on Vercel
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Customization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To adapt this portfolio for your own use:
+
+1. **Update personal information** in `app/data/` or component files
+2. **Replace project data** with your own work
+3. **Customize styling** in the theme configuration
+4. **Update assets** in the `public/` directory
+5. **Configure contact form** with your preferred service
+
+## 📱 Responsive Design
+
+The site is fully responsive and optimized for:
+
+- 📱 Mobile devices (320px+)
+- 📟 Tablets (768px+)
+- 💻 Desktop (1024px+)
+- 🖥️ Large screens (1440px+)
+
+<!-- ## ⚡ Performance
+
+- **Lighthouse Score**: 95+ across all metrics
+- **Core Web Vitals**: Optimized for LCP, FID, and CLS
+- **Image Optimization**: Next.js Image component with WebP support
+- **Code Splitting**: Automatic route-based code splitting -->
+
+<!-- ## 🚀 Deployment
+
+The site is deployed on Vercel with automatic deployments from the main branch.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/DrAcula27/portfolio) -->
+
+### Manual Deployment
+
+```bash
+npm run build
+npm run start
+```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](https://github.com/aws/mit-0).
+
+## 🤝 Connect With Me
+
+<!-- - **Portfolio**: [danielle-andrews.devdecks.com](https://danielle-andrews.devdecks.com) -->
+
+- **LinkedIn**: [LinkedIn](https://linkedin.com/in/daniellerandrews)
+- **GitHub**: [GitHub](https://github.com/DrAcula27)
+- **Email**: danielle.andrews.dev@icloud.com
