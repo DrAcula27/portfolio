@@ -21,7 +21,8 @@ interface GitHubEvent {
   payload: {
     commits?: { sha: string; message: string }[];
     action?: string;
-    pull_request?: { merged: boolean; state: string };
+    pull_request?: { merged?: boolean; state?: string };
+    review?: { state?: string };
     ref_type?: string;
     ref?: string;
   };
@@ -49,19 +50,36 @@ const GitHubStatsWidget = ({
         // get date 90 days ago
         const ninetyDaysAgo = new Date();
         ninetyDaysAgo.setDate(ninetyDaysAgo.getDate() - 90);
-        const since = ninetyDaysAgo.toISOString();
+        // const since = ninetyDaysAgo.toISOString();
 
-        // fetch GitHub stats
+        // build headers (use NEXT_PUBLIC_GITHUB_TOKEN if provided to reduce rate limiting)
+        const headers: Record<string, string> = {
+          Accept: 'application/vnd.github.v3+json',
+        };
+        const token = (
+          process.env as Record<string, string | undefined>
+        ).NEXT_PUBLIC_GITHUB_TOKEN;
+        if (token) {
+          headers.Authorization = `token ${token}`;
+        }
+
+        // fetch public events (note: /users/:username/events returns recent public events)
         const response = await fetch(
-          `https://api.github.com/users/${username}/events?since=${since}`
+          `https://api.github.com/users/${username}/events`,
+          { headers }
         );
         if (!response.ok) {
           throw new Error(
-            `Error fetching data: ${response.statusText}`
+            `Error fetching data: ${response.status} ${response.statusText}`
           );
         }
 
-        const events = await response.json();
+        const events = (await response.json()) as
+          | GitHubEvent[]
+          | null;
+        if (!Array.isArray(events)) {
+          throw new Error('Unexpected response from GitHub API');
+        }
 
         const statsCalc = {
           commits: 0,
@@ -73,18 +91,22 @@ const GitHubStatsWidget = ({
           branches: 0,
         };
 
-        events.forEach((event: GitHubEvent) => {
+        events.forEach((event) => {
           if (event.type === 'PushEvent') {
             statsCalc.commits += event.payload.commits?.length || 0;
           } else if (event.type === 'PullRequestEvent') {
+            // count PR events (opened/closed/etc.)
             statsCalc.prs += 1;
-            if (event.payload.action === 'opened') {
-              statsCalc.mergedPrs += event.payload.pull_request
-                ?.merged
-                ? 1
-                : 0;
+            // when a PR is closed and merged, count as merged
+            if (
+              event.payload.action === 'closed' &&
+              event.payload.pull_request?.merged
+            ) {
+              statsCalc.mergedPrs += 1;
             }
-            if (event.payload.action === 'review_requested') {
+          } else if (event.type === 'PullRequestReviewEvent') {
+            // reviews submitted — count as reviewed PRs (simplified)
+            if (event.payload.action === 'submitted') {
               statsCalc.reviewedPrs += 1;
             }
           } else if (event.type === 'IssuesEvent') {
@@ -107,7 +129,7 @@ const GitHubStatsWidget = ({
         setStats((prev) => ({
           ...prev,
           loading: false,
-          error: 'Failed to fetch GitHub stats',
+          error: `Failed to fetch GitHub stats: ${error}`,
         }));
       }
     };
