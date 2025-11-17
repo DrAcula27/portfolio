@@ -2,12 +2,10 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  impact: string;
-  technologies: string[];
-  featured: boolean;
-  github?: string;
-  live?: string;
-  image?: string;
+  tags: string[];
+  imgUrl?: string;
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 export interface Experience {

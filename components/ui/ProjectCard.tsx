@@ -2,25 +2,68 @@
 
 import { motion } from 'motion/react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import type { Project } from '@/lib/types';
 
-interface Props {
-  title: string;
-  body: string;
-  githubUrl?: string;
-  liveUrl?: string;
-}
+type Props = Pick<
+  Project,
+  | 'title'
+  | 'description'
+  | 'tags'
+  | 'imgUrl'
+  | 'githubUrl'
+  | 'liveUrl'
+>;
 
 export default function ProjectCard({
   title,
-  body,
+  description,
+  tags,
+  imgUrl,
   githubUrl,
   liveUrl,
 }: Props) {
   return (
-    <motion.div className="rounded-lg shadow-lg p-6 border">
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p>{body}</p>
-      <div className="flex gap-4">
+    <motion.div className="rounded-lg shadow-lg p-6 border overflow-hidden flex flex-col h-full hover:scale-105 transition-all duration-300">
+      {/* title */}
+      <h3 className="text-xl font-semibold mb-0.5">{title}</h3>
+
+      {/* tags */}
+      <p>
+        {tags.map((tag) => (
+          <span
+            key={title}
+            className="mx-1 px-3 py-1 rounded-full border text-sm italic color-accent-cool"
+          >
+            {tag}
+          </span>
+        ))}
+      </p>
+
+      {/* img container with hover overlay */}
+      <div className="relative h-48 overflow-hidden flex-shrink-0">
+        {imgUrl && (
+          <motion.img
+            src={imgUrl}
+            alt={title}
+            className="w-full h-full object-cover rounded-sm"
+          />
+        )}
+
+        {/* hover overlay */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="absolute inset-0 bg-black/70 flex items-center justify-center p-4"
+        >
+          <p className="max-h-full overflow-y-auto text-white text-sm leading-relaxed">
+            {description}
+          </p>
+        </motion.div>
+      </div>
+
+      {/* links */}
+      <div className="flex justify-around mt-2">
         {githubUrl && (
           <motion.a
             href={githubUrl}

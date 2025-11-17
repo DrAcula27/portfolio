@@ -33,32 +33,23 @@ export const experiences: Experience[] = [
         id: 'noaa-1',
         title: 'Graduate Student Team Mentorship & Project Launch',
         description:
-          'Led the design and development process for the Salmonid Stressor-Response eLibrary in R/Shiny alongside a graduate student team.',
-        impact:
-          'Guided project planning, code reviews, UI/UX feedback, and milestone tracking to ensure the application met NOAA’s technical and scientific standards. Delivered the initial production-ready release on time, with functional features aligned to research and conservation needs.',
-        technologies: ['Git', 'GitHub', 'Google Meet'],
-        featured: false,
+          'Led the design and development process for the Salmonid Stressor-Response eLibrary in R/Shiny alongside a graduate student team. Guided project planning, code reviews, UI/UX feedback, and milestone tracking to ensure the application met NOAA’s technical and scientific standards. Delivered the initial production-ready release on time, with functional features aligned to research and conservation needs.',
+        tags: ['Git', 'GitHub', 'Google Meet'],
       },
       {
         id: 'noaa-2',
         title: 'Post-Handoff Development & Maintenance',
         description:
-          'Took over sole developer responsibilities after the student team’s graduation.',
-        impact:
-          'Enhanced application functionality and interface with accessibility-focused improvements to meet WCAG compliance and usability goals. Collaborated with NOAA scientists and federal partners to integrate additional peer-reviewed literature, ensuring the eLibrary remains a comprehensive resource for stressor-response data.',
-        technologies: ['R', 'Shiny', 'SQLite', 'GitHub'],
-        featured: false,
+          'Took over sole developer responsibilities after the student team’s graduation. Enhanced application functionality and interface with accessibility-focused improvements to meet WCAG compliance and usability goals. Collaborated with NOAA scientists and federal partners to integrate additional peer-reviewed literature, ensuring the eLibrary remains a comprehensive resource for stressor-response data.',
+        tags: ['R', 'Shiny', 'SQLite', 'GitHub'],
       },
       {
         id: 'noaa-3',
         title:
           'Application Quality, Stability & Recognition Improvements',
         description:
-          'Fixed critical bugs and made essential application improvements.',
-        impact:
-          'Resolved a critical admin panel bug by fixing table reference mismatches, eliminating 100% of related server disconnect errors during QA testing. Implemented formal acknowledgments for the student team and sponsoring professor to maintain transparent authorship and project history.',
-        technologies: ['R', 'Shiny', 'SQLite', 'GitHub'],
-        featured: false,
+          'Fixed critical bugs and made essential application improvements. Resolved a critical admin panel bug by fixing table reference mismatches, eliminating 100% of related server disconnect errors during QA testing. Implemented formal acknowledgments for the student team and sponsoring professor to maintain transparent authorship and project history.',
+        tags: ['R', 'Shiny', 'SQLite', 'GitHub'],
       },
     ],
     link: 'https://www.fisheries.noaa.gov/region/west-coast/northwest-science',
@@ -97,46 +88,29 @@ export const experiences: Experience[] = [
         id: '1',
         title: 'Data Cleanup & Migration',
         description:
-          'Cleaned and organized 10+ years of restoration project data for migration into MongoDB Atlas.',
-        impact:
-          'Improved data integrity and accessibility for biologists and stakeholders. Designed a scalable data schema to accommodate future growth and ensure optimal performance.',
-        technologies: ['Google Sheets', 'MongoDB', 'MongoDB Atlas'],
-        featured: false,
+          'Cleaned and organized 10+ years of restoration project data for migration into MongoDB Atlas. Improved data integrity and accessibility for biologists and stakeholders. Designed a scalable data schema to accommodate future growth and ensure optimal performance.',
+        tags: ['Google Sheets', 'MongoDB', 'MongoDB Atlas'],
       },
       {
         id: '2',
         title: 'WordPress Integration',
         description:
-          "Integrated interactive charts into the organization's existing WordPress site using MongoDB Charts.",
-        impact:
-          'Enhanced data visualization and stakeholder engagement by providing easy access to project data and visualizations directly on the website.',
-        technologies: ['WordPress', 'MongoDB Charts'],
-        featured: false,
+          "Integrated interactive charts into the organization's existing WordPress site using MongoDB Charts. Enhanced data visualization and stakeholder engagement by providing easy access to project data and visualizations directly on the website.",
+        tags: ['WordPress', 'MongoDB Charts'],
       },
       {
         id: '3',
         title: 'Microservice Development',
         description:
-          'Built a Node.js/Express microservice that generates embeddable iframes for data visualizations, enabling seamless integration of interactive analytics dashboards into WordPress without plugin dependencies or performance overhead.',
-        impact:
-          'Streamlined data access and improved user experience, allowing staff and stakeholders to efficiently interact with project information.',
-        technologies: [
-          'Node.js',
-          'Express',
-          'MongoDB Atlas',
-          'WordPress',
-        ],
-        featured: false,
+          'Built a Node.js/Express microservice that generates embeddable iframes for data visualizations, enabling seamless integration of interactive analytics dashboards into WordPress without plugin dependencies or performance overhead. Streamlined data access and improved user experience, allowing staff and stakeholders to efficiently interact with project information.',
+        tags: ['Node.js', 'Express', 'MongoDB Atlas', 'WordPress'],
       },
       {
         id: '4',
         title: 'Staff Training & Documentation',
         description:
-          'Provided training and documentation to staff on using the new database and web application.',
-        impact:
-          'Ensured smooth adoption of the system and ease of importing data, empowering staff to effectively manage and utilize the new tools.',
-        technologies: ['Google Docs', 'Google Meet'],
-        featured: false,
+          'Provided training and documentation to staff on using the new database and web application. Ensured smooth adoption of the system and ease of importing data, empowering staff to effectively manage and utilize the new tools.',
+        tags: ['Google Docs', 'Google Meet'],
       },
     ],
     link: 'https://www.pnwsalmoncenter.org',
