@@ -171,7 +171,7 @@ export default function About() {
             }}
           >
             <h3 className="text-2xl font-semibold text-center mb-2 mt-3">
-              Technologies I work with daily:
+              Technologies I work with to bring ideas to life:
             </h3>
             <div className="grid grid-cols-1 max-w-fit mx-auto sm:grid-cols-2 md:max-w-full md:mx-0 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {/* frontend development */}

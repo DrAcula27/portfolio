@@ -313,12 +313,6 @@ export default function Experience() {
                                               <p className="mb-2 mt-0 italic">
                                                 {project.description}
                                               </p>
-                                              <p className="font-medium">
-                                                <span className="font-semibold">
-                                                  Impact
-                                                </span>
-                                                : {project.impact}
-                                              </p>
                                             </div>
                                           </div>
                                         )
@@ -373,13 +367,12 @@ export default function Experience() {
                 I am always open to discussing new opportunities and
                 interesting projects.
               </p>
-              <motion.button
-                className="btn btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <a
+                href="#contact"
+                className="group btn btn-primary hover:scale-105 ease-in-out active:scale-95"
               >
                 Get In Touch
-              </motion.button>
+              </a>
             </div>
           </motion.div>
         </motion.div>

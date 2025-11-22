@@ -124,7 +124,7 @@ export default function Hero() {
               href="#contact"
               className="group btn btn-primary flex items-center gap-2 hover:scale-105 ease-in-out active:scale-95"
             >
-              Get In Touch
+              Free Consultation
               <FaArrowDown
                 size={18}
                 className="group-hover:translate-y-1 transition-transform duration-300 ease-in-out"
